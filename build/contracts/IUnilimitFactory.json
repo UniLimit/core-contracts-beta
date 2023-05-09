@@ -1,0 +1,744 @@
+{
+  "contractName": "IUnilimitFactory",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "tokenA",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "tokenB",
+          "type": "address"
+        },
+        {
+          "internalType": "uint24",
+          "name": "fee",
+          "type": "uint24"
+        },
+        {
+          "internalType": "address",
+          "name": "settlerAddress",
+          "type": "address"
+        }
+      ],
+      "name": "deployPair",
+      "outputs": [
+        {
+          "internalType": "contract UniV3TradingPair",
+          "name": "newPair",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"tokenA\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tokenB\",\"type\":\"address\"},{\"internalType\":\"uint24\",\"name\":\"fee\",\"type\":\"uint24\"},{\"internalType\":\"address\",\"name\":\"settlerAddress\",\"type\":\"address\"}],\"name\":\"deployPair\",\"outputs\":[{\"internalType\":\"contract UniV3TradingPair\",\"name\":\"newPair\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"deployPair(address,address,uint24,address)\":{\"params\":{\"fee\":\"The Uniswap Pool fee in bps * 100\",\"settlerAddress\":\"The address of the settler entity attached to the pair\",\"tokenA\":\"The address of the second token of the pair\"},\"returns\":{\"newPair\":\"The newly created pair\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"deployPair(address,address,uint24,address)\":{\"notice\":\"Deploys a new Unilimit Pair\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IUnilimitFactory.sol\":\"IUnilimitFactory\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":300},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0xf70bc25d981e4ec9673a995ad2995d5d493ea188d3d8f388bba9c227ce09fb82\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd970f51e3a77790c2f02b5b1759827c3b897c3d98c407b3631e8af32e3dc93c\",\"dweb:/ipfs/QmPF85Amgbqjk3SNZKsPCsqCw8JfwYEPMnnhvMJUyX58je\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]},\"@openzeppelin/contracts/token/ERC20/SafeERC20.sol\":{\"keccak256\":\"0xf12dfbe97e6276980b83d2830bb0eb75e0cf4f3e626c2471137f82158ae6a0fc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3a849c2d95e85463909e5b5c920b13e7a11216ca14127085e16d22b9379d52a\",\"dweb:/ipfs/QmUg3CZDbCCcQdroEpexBy5ZFd5vD1UWijWQq9qHZjtJNQ\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x2d99a0deb6648c34fbc66d6ac4a2d64798d7a5321b45624f6736fadc63da1962\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2dcdce5ede1e5e650d174ec0b35be7d47b6a50f30bc895ef0d9e59fb75052e45\",\"dweb:/ipfs/QmQ2XFsDLTYqfEdw7pYzHiGtFRY11yQm4b6ynYgKqDxeB8\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol\":{\"keccak256\":\"0xe6bd1b1218338b6f9fe17776f48623b4ac3d8a40405f74a44bc23c00abe2ca13\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0c354c3f6e9c487759aa7869be4fba68e0b2efc777b514d289c4cbd3ff8f7e1a\",\"dweb:/ipfs/QmdF9LcSYVmiUCL7JxLEYmSLrjga6zJsujfi6sgEJD4M1z\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0xccb917776f826ac6b68bd5a15a5f711e3967848a52ba11e6104d9a4f593314a7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://430255ad2229ced6d880e61a67bdc6e48dbbaed8354a7c1fe918cd8b8714a886\",\"dweb:/ipfs/QmTHY56odzqEpEC6v6tafaWMYY7vmULw25q5XHJLCCAeox\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x52146049d6709c870e8ddcd988b5155cb6c5d640cfcd8978aee52bc1ba2ec4eb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada84513617b7c1b2f890b44503735abaec73a1acd030112a17aac7e6c66a4a1\",\"dweb:/ipfs/QmaiFwdio67iJrfjAdkMac24eJ5sS1qD7CZW6PhUU6KjiK\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x28911e614500ae7c607a432a709d35da25f3bc5ddc8bd12b278b66358070c0ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://256c8c8af5eb072bc473226ab2b2187149b8fc04f5f4a4820db22527f5ce8e3c\",\"dweb:/ipfs/QmRvi5BhnL7Rxf85KrJhwM6RRhukm4tzoctRdgQEheNyiN\"]},\"@openzeppelin/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x8bbbc2f5c10065ee272592ae0a7a6ceb23de2fbd81564ee0bb015ecf404d5f61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b95e56c1640d0ef789fc5c16269e141e992f6c8ac97cc6d377bd3825e9cab182\",\"dweb:/ipfs/QmVzaxJZY51EhagrcNnkxoU6Uq17RhATe7aHvtkC6wUkgK\"]},\"@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol\":{\"keccak256\":\"0xfe6113d518466cd6652c85b111e01f33eb62157f49ae5ed7d5a3947a2044adb1\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://1c42b9e6f5902ac38dd43e25750939baa7e0c1425dc75afd717c4412731065d5\",\"dweb:/ipfs/QmWaoacnzsucTvBME2o7YgZBZMhaHv7fkj83htHMVWJKWh\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol\":{\"keccak256\":\"0x9453dd0e7442188667d01d9b65de3f1e14e9511ff3e303179a15f6fc267f7634\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://982f4328f956c3e60e67501e759eb292ac487f76460c774c50e9ae4fcc92aae5\",\"dweb:/ipfs/QmRnzEDsaqtd9PJEVcgQi7p5aV5pMSvRUoGZJAdwFUJxgZ\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol\":{\"keccak256\":\"0xe603ac5b17ecdee73ba2b27efdf386c257a19c14206e87eee77e2017b742d9e5\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://8febc9bdb399a4d94bb89f5377732652e2400e4a8dee808201ade6848f9004e7\",\"dweb:/ipfs/QmaKDqYYFU4d2W2iN77aDHptfbFmYZRrMYXHeGpJmM8C1c\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol\":{\"keccak256\":\"0x8071514d0fe5d17d6fbd31c191cdfb703031c24e0ece3621d88ab10e871375cd\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://d0b571930cc7488b1d546a7e9cea7c52d8b3c4e207da657ed0e0db7343b8cd03\",\"dweb:/ipfs/QmaGK6vVwB95QSTR1XMYvrh7ivYAYZxi3fD7v6VMA4jZ39\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol\":{\"keccak256\":\"0xf6e5d2cd1139c4c276bdbc8e1d2b256e456c866a91f1b868da265c6d2685c3f7\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://b99c8c9ae8e27ee6559e5866bea82cbc9ffc8247f8d15b7422a4deb287d4d047\",\"dweb:/ipfs/QmfL8gaqt3ffAnm6nVj5ksuNpLygXuL3xq5VBqrkwC2JJ3\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol\":{\"keccak256\":\"0x759b78a2918af9e99e246dc3af084f654e48ef32bb4e4cb8a966aa3dcaece235\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://64144fb96e1c7fdba87305acadb98a198d26a3d46c097cb3a666e567f6f29735\",\"dweb:/ipfs/QmUnWVwN9FKB9uV5Pr8YfLpWZnYM2DENnRMaadZ492JS9u\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol\":{\"keccak256\":\"0x852dc1f5df7dcf7f11e7bb3eed79f0cea72ad4b25f6a9d2c35aafb48925fd49f\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://ed63907c38ff36b0e22bc9ffc53e791ea74f0d4f0e7c257fdfb5aaf8825b1f0f\",\"dweb:/ipfs/QmSQrckghEjs6HVsA5GVgpNpZWvTXMY5eQLF7cN6deFeEg\"]},\"@uniswap/v3-core/contracts/libraries/FixedPoint96.sol\":{\"keccak256\":\"0x0ba8a9b95a956a4050749c0158e928398c447c91469682ca8a7cc7e77a7fe032\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://186d3b528866065a5856f96d2aeec698efa99f8da913e9adf34f8cc296cc993d\",\"dweb:/ipfs/QmUAiMvtAQp8c9dy57bqJYzG7hkb1uChiPaQmt264skoqP\"]},\"@uniswap/v3-core/contracts/libraries/FullMath.sol\":{\"keccak256\":\"0x50e87f7a3197525d1c6f7e04290060e848677c8a4e86c554bc6ace4a4d0d476d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3874093a6b37d8e68f9475a91f8eb0a1c808cb6153c84cfe6c37909505a4d24e\",\"dweb:/ipfs/QmUqGpQqvSHX4SwUvcBCs9g4ZhR9JPhgD3615oUigAhtjj\"]},\"@uniswap/v3-core/contracts/libraries/TickMath.sol\":{\"keccak256\":\"0xda8c2c0b12d2976acfd364453ba5f5bf0117ba3c91175ee9e1067d3fb26944d9\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://3f3d2d7c2723c91830c74d96292f28fc1cfe28d388cdb9c1a5ebadb4c2b96f81\",\"dweb:/ipfs/QmYU4wk8MEm33wVWR38LoncvR7b8PP1mLuGBKX3dUpYJVE\"]},\"@uniswap/v3-periphery/contracts/interfaces/IERC721Permit.sol\":{\"keccak256\":\"0x9e3c2a4ee65ddf95b2dfcb0815784eea3a295707e6f8b83e4c4f0f8fe2e3a1d4\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://bfd939085b3618101b955f87c7fabf38338ba1aad480295acb8102ebc5d72471\",\"dweb:/ipfs/QmauQD8bGDHTztmTDfaKXjzM7Wacrq2XU7VcTbwn1WrDBL\"]},\"@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol\":{\"keccak256\":\"0xe1dadc73e60bf05d0b4e0f05bd2847c5783e833cc10352c14763360b13495ee1\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://6e3b10f75c101de044c1253672207399c1513fd1f0f17be31069c18c0b9a1460\",\"dweb:/ipfs/QmXrkXNY6njQfepE7KbRtJMruGXfrZwsMMsW7m5e3XS9Hf\"]},\"@uniswap/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol\":{\"keccak256\":\"0x7affcfeb5127c0925a71d6a65345e117c33537523aeca7bc98085ead8452519d\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://e16b291294210e71cb0f20cd0afe62ae2dc6878d627f5ccc19c4dc9cd80aec3f\",\"dweb:/ipfs/QmQGitSyBr26nour81BZmpmDMyJpvZRqHQZvnCD1Acb127\"]},\"@uniswap/v3-periphery/contracts/interfaces/IPeripheryPayments.sol\":{\"keccak256\":\"0xb547e10f1e69bed03621a62b73a503e260643066c6b4054867a4d1fef47eb274\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://f9a90f58f5fd5fb42f7811f4094113b532f307b14a73764c91f977590747f407\",\"dweb:/ipfs/QmSeNH2mfiDMKf3Q6V2sqtNxx1s72JNuA1VVxRM9HoMqYp\"]},\"@uniswap/v3-periphery/contracts/interfaces/IPoolInitializer.sol\":{\"keccak256\":\"0x9d7695e8d94c22cc5fcced602017aabb988de89981ea7bee29ea629d5328a862\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://61b50933026ee1017db2a6273af8cedc3238c95dca58880db0918dbdbb2f064f\",\"dweb:/ipfs/QmUebR26pqG25d18aBELKz8aFFKkmHa8PxntzXTA7o9Ldu\"]},\"@uniswap/v3-periphery/contracts/interfaces/external/IWETH9.sol\":{\"keccak256\":\"0x6d7a8eb484e84bceb1d84c7be431c5b8120d519b0c2a7b4c7064c814635dea4c\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://8c3c81eb23b88076475e8ddd4edccb007358fa64911fc7e671a00adaf2006e75\",\"dweb:/ipfs/QmPbrPJ4w3UDPioJCvgtxMRaWNRa7tKHqDLtU17DTZPHBB\"]},\"@uniswap/v3-periphery/contracts/libraries/LiquidityAmounts.sol\":{\"keccak256\":\"0xf149581d28e1c81736dfe72be73ee1301d4945340cc6282fcdd63fe3c85abf24\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://0b67f375180bb62fe6753601cd09740496dcdcec4c0a4f9eaa6e94c5e1bb6844\",\"dweb:/ipfs/QmWYwkmqynRq7g81Nijg4eEkPgSRGnegDrbbEKkkTC1k2w\"]},\"@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol\":{\"keccak256\":\"0x5edd84eb8ba7c12fd8cb6cffe52e1e9f3f6464514ee5f539c2283826209035a2\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://f375d0e6d5ea3674e1aa6f112b021e9a86721a6a2f3cb22d673378b30cf0e840\",\"dweb:/ipfs/QmWJir2qnJyp963mU6U3jEEx9i3H3V5BgKawAfSnG1pC8w\"]},\"project:/contracts/UniV3TradingPair.sol\":{\"keccak256\":\"0x30c96e1c1f5781c8793947fda6f07980d099ac242732d3a8a208163a035b56e3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4a795394c82884839106fd0c8d9bef6e588695939e2af333a3cc7f1436daf4d6\",\"dweb:/ipfs/QmVHHE71THtayvq15znPq4DtiNAcrVA9tkHQwroVdoTgVy\"]},\"project:/contracts/interfaces/IUniV3TradingPair.sol\":{\"keccak256\":\"0xe3936999029698620209aaa4bfecf4b2bc29a9a5bc5bc65ee742a001be2d6f49\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e2951a54af8cd0df45e38ed1d95295d21f0d3e1cd9900b2374962e1600d942b8\",\"dweb:/ipfs/QmcjrRxGbrJmiDED5CuGjZ1pLt7BgFiD9CTDjtEF3xqvwG\"]},\"project:/contracts/interfaces/IUnilimitFactory.sol\":{\"keccak256\":\"0x481f9a3548c131d0554e2b48609ae30133dce698f6437457bf65b87829489971\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ef580d251be3a7a9e54193f69d94d917a2d0f5a79cc2d767f24ee5984283a0fb\",\"dweb:/ipfs/QmPt8SQrbxysq7gDQX7CGxxkSpXAjSSqdcgAPLZSLT6e2U\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.7.6;\r\npragma abicoder v2; \r\n\r\nimport '../UniV3TradingPair.sol';\r\n\r\ninterface IUnilimitFactory {\r\n\r\n    /// @notice Deploys a new Unilimit Pair\r\n    /// @param tokenA The address of the first token of the pair\r\n    /// @param tokenA The address of the second token of the pair\r\n    /// @param fee The Uniswap Pool fee in bps * 100\r\n    /// @param settlerAddress The address of the settler entity attached to the pair\r\n    /// @return newPair The newly created pair\r\n    function deployPair(\r\n        address tokenA,\r\n        address tokenB,\r\n        uint24 fee,\r\n        address settlerAddress\r\n    ) \r\n    external\r\n    returns (\r\n        UniV3TradingPair newPair\r\n    );\r\n}",
+  "sourcePath": "C:\\Users\\LeoDu\\source\\repos\\unilimit\\contracts\\interfaces\\IUnilimitFactory.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IUnilimitFactory.sol",
+    "exportedSymbols": {
+      "Address": [
+        2146
+      ],
+      "FixedPoint96": [
+        3883
+      ],
+      "FullMath": [
+        4056
+      ],
+      "IERC165": [
+        68
+      ],
+      "IERC20": [
+        501
+      ],
+      "IERC721": [
+        1774
+      ],
+      "IERC721Enumerable": [
+        1805
+      ],
+      "IERC721Metadata": [
+        1832
+      ],
+      "IERC721Permit": [
+        4626
+      ],
+      "IERC721Receiver": [
+        1850
+      ],
+      "INonfungiblePositionManager": [
+        4821
+      ],
+      "IPeripheryImmutableState": [
+        4837
+      ],
+      "IPeripheryPayments": [
+        4863
+      ],
+      "IPoolInitializer": [
+        4882
+      ],
+      "IUniV3TradingPair": [
+        7748
+      ],
+      "IUnilimitFactory": [
+        7767
+      ],
+      "IUniswapV3Pool": [
+        3453
+      ],
+      "IUniswapV3PoolActions": [
+        3549
+      ],
+      "IUniswapV3PoolDerivedState": [
+        3580
+      ],
+      "IUniswapV3PoolEvents": [
+        3699
+      ],
+      "IUniswapV3PoolImmutables": [
+        3739
+      ],
+      "IUniswapV3PoolOwnerActions": [
+        3765
+      ],
+      "IUniswapV3PoolState": [
+        3873
+      ],
+      "IWETH9": [
+        4899
+      ],
+      "LiquidityAmounts": [
+        5239
+      ],
+      "PoolAddress": [
+        5331
+      ],
+      "ReentrancyGuard": [
+        3261
+      ],
+      "SafeERC20": [
+        714
+      ],
+      "SafeMath": [
+        423
+      ],
+      "TickMath": [
+        4591
+      ],
+      "UniV3TradingPair": [
+        7483
+      ]
+    },
+    "id": 7768,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7750,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:39"
+      },
+      {
+        "id": 7751,
+        "literals": [
+          "abicoder",
+          "v2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:19:39"
+      },
+      {
+        "absolutePath": "project:/contracts/UniV3TradingPair.sol",
+        "file": "../UniV3TradingPair.sol",
+        "id": 7752,
+        "nodeType": "ImportDirective",
+        "scope": 7768,
+        "sourceUnit": 7484,
+        "src": "81:33:39",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 7767,
+        "linearizedBaseContracts": [
+          7767
+        ],
+        "name": "IUnilimitFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 7753,
+              "nodeType": "StructuredDocumentation",
+              "src": "154:360:39",
+              "text": "@notice Deploys a new Unilimit Pair\n @param tokenA The address of the first token of the pair\n @param tokenA The address of the second token of the pair\n @param fee The Uniswap Pool fee in bps * 100\n @param settlerAddress The address of the settler entity attached to the pair\n @return newPair The newly created pair"
+            },
+            "functionSelector": "9209a37e",
+            "id": 7766,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployPair",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7762,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7755,
+                  "mutability": "mutable",
+                  "name": "tokenA",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7766,
+                  "src": "550:14:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7754,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "550:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7757,
+                  "mutability": "mutable",
+                  "name": "tokenB",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7766,
+                  "src": "575:14:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7756,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "575:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7759,
+                  "mutability": "mutable",
+                  "name": "fee",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7766,
+                  "src": "600:10:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint24",
+                    "typeString": "uint24"
+                  },
+                  "typeName": {
+                    "id": 7758,
+                    "name": "uint24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "600:6:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint24",
+                      "typeString": "uint24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7761,
+                  "mutability": "mutable",
+                  "name": "settlerAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7766,
+                  "src": "621:22:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7760,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:7:39",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "539:111:39"
+            },
+            "returnParameters": {
+              "id": 7765,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7764,
+                  "mutability": "mutable",
+                  "name": "newPair",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7766,
+                  "src": "690:24:39",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_UniV3TradingPair_$7483",
+                    "typeString": "contract UniV3TradingPair"
+                  },
+                  "typeName": {
+                    "id": 7763,
+                    "name": "UniV3TradingPair",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 7483,
+                    "src": "690:16:39",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_UniV3TradingPair_$7483",
+                      "typeString": "contract UniV3TradingPair"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "679:42:39"
+            },
+            "scope": 7767,
+            "src": "520:202:39",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7768,
+        "src": "118:607:39"
+      }
+    ],
+    "src": "33:692:39"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/IUnilimitFactory.sol",
+      "exportedSymbols": {
+        "Address": [
+          2146
+        ],
+        "FixedPoint96": [
+          3883
+        ],
+        "FullMath": [
+          4056
+        ],
+        "IERC165": [
+          68
+        ],
+        "IERC20": [
+          501
+        ],
+        "IERC721": [
+          1774
+        ],
+        "IERC721Enumerable": [
+          1805
+        ],
+        "IERC721Metadata": [
+          1832
+        ],
+        "IERC721Permit": [
+          4626
+        ],
+        "IERC721Receiver": [
+          1850
+        ],
+        "INonfungiblePositionManager": [
+          4821
+        ],
+        "IPeripheryImmutableState": [
+          4837
+        ],
+        "IPeripheryPayments": [
+          4863
+        ],
+        "IPoolInitializer": [
+          4882
+        ],
+        "IUniV3TradingPair": [
+          7748
+        ],
+        "IUnilimitFactory": [
+          7767
+        ],
+        "IUniswapV3Pool": [
+          3453
+        ],
+        "IUniswapV3PoolActions": [
+          3549
+        ],
+        "IUniswapV3PoolDerivedState": [
+          3580
+        ],
+        "IUniswapV3PoolEvents": [
+          3699
+        ],
+        "IUniswapV3PoolImmutables": [
+          3739
+        ],
+        "IUniswapV3PoolOwnerActions": [
+          3765
+        ],
+        "IUniswapV3PoolState": [
+          3873
+        ],
+        "IWETH9": [
+          4899
+        ],
+        "LiquidityAmounts": [
+          5239
+        ],
+        "PoolAddress": [
+          5331
+        ],
+        "ReentrancyGuard": [
+          3261
+        ],
+        "SafeERC20": [
+          714
+        ],
+        "SafeMath": [
+          423
+        ],
+        "TickMath": [
+          4591
+        ],
+        "UniV3TradingPair": [
+          7483
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 7750,
+        "name": "PragmaDirective",
+        "src": "33:22:39"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "abicoder",
+            "v2"
+          ]
+        },
+        "id": 7751,
+        "name": "PragmaDirective",
+        "src": "57:19:39"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 7484,
+          "absolutePath": "project:/contracts/UniV3TradingPair.sol",
+          "file": "../UniV3TradingPair.sol",
+          "scope": 7768,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7752,
+        "name": "ImportDirective",
+        "src": "81:33:39"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            7767
+          ],
+          "name": "IUnilimitFactory",
+          "scope": 7768
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "9209a37e",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "deployPair",
+              "scope": 7767,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Deploys a new Unilimit Pair\n @param tokenA The address of the first token of the pair\n @param tokenA The address of the second token of the pair\n @param fee The Uniswap Pool fee in bps * 100\n @param settlerAddress The address of the settler entity attached to the pair\n @return newPair The newly created pair"
+                },
+                "id": 7753,
+                "name": "StructuredDocumentation",
+                "src": "154:360:39"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tokenA",
+                      "scope": 7766,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7754,
+                        "name": "ElementaryTypeName",
+                        "src": "550:7:39"
+                      }
+                    ],
+                    "id": 7755,
+                    "name": "VariableDeclaration",
+                    "src": "550:14:39"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tokenB",
+                      "scope": 7766,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7756,
+                        "name": "ElementaryTypeName",
+                        "src": "575:7:39"
+                      }
+                    ],
+                    "id": 7757,
+                    "name": "VariableDeclaration",
+                    "src": "575:14:39"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "fee",
+                      "scope": 7766,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint24",
+                          "type": "uint24"
+                        },
+                        "id": 7758,
+                        "name": "ElementaryTypeName",
+                        "src": "600:6:39"
+                      }
+                    ],
+                    "id": 7759,
+                    "name": "VariableDeclaration",
+                    "src": "600:10:39"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "settlerAddress",
+                      "scope": 7766,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7760,
+                        "name": "ElementaryTypeName",
+                        "src": "621:7:39"
+                      }
+                    ],
+                    "id": 7761,
+                    "name": "VariableDeclaration",
+                    "src": "621:22:39"
+                  }
+                ],
+                "id": 7762,
+                "name": "ParameterList",
+                "src": "539:111:39"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "newPair",
+                      "scope": 7766,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract UniV3TradingPair",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "UniV3TradingPair",
+                          "referencedDeclaration": 7483,
+                          "type": "contract UniV3TradingPair"
+                        },
+                        "id": 7763,
+                        "name": "UserDefinedTypeName",
+                        "src": "690:16:39"
+                      }
+                    ],
+                    "id": 7764,
+                    "name": "VariableDeclaration",
+                    "src": "690:24:39"
+                  }
+                ],
+                "id": 7765,
+                "name": "ParameterList",
+                "src": "679:42:39"
+              }
+            ],
+            "id": 7766,
+            "name": "FunctionDefinition",
+            "src": "520:202:39"
+          }
+        ],
+        "id": 7767,
+        "name": "ContractDefinition",
+        "src": "118:607:39"
+      }
+    ],
+    "id": 7768,
+    "name": "SourceUnit",
+    "src": "33:692:39"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2023-05-09T15:26:17.959Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "deployPair(address,address,uint24,address)": {
+        "params": {
+          "fee": "The Uniswap Pool fee in bps * 100",
+          "settlerAddress": "The address of the settler entity attached to the pair",
+          "tokenA": "The address of the second token of the pair"
+        },
+        "returns": {
+          "newPair": "The newly created pair"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "deployPair(address,address,uint24,address)": {
+        "notice": "Deploys a new Unilimit Pair"
+      }
+    },
+    "version": 1
+  }
+}

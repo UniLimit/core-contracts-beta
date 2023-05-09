@@ -1,0 +1,2680 @@
+{
+  "contractName": "IUniswapV3PoolActions",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "int24",
+          "name": "tickLower",
+          "type": "int24"
+        },
+        {
+          "internalType": "int24",
+          "name": "tickUpper",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint128",
+          "name": "amount",
+          "type": "uint128"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "mint",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount0",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount1",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "int24",
+          "name": "tickLower",
+          "type": "int24"
+        },
+        {
+          "internalType": "int24",
+          "name": "tickUpper",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint128",
+          "name": "amount0Requested",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "amount1Requested",
+          "type": "uint128"
+        }
+      ],
+      "name": "collect",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "amount0",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "amount1",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int24",
+          "name": "tickLower",
+          "type": "int24"
+        },
+        {
+          "internalType": "int24",
+          "name": "tickUpper",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint128",
+          "name": "amount",
+          "type": "uint128"
+        }
+      ],
+      "name": "burn",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount0",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount1",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "zeroForOne",
+          "type": "bool"
+        },
+        {
+          "internalType": "int256",
+          "name": "amountSpecified",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceLimitX96",
+          "type": "uint160"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "swap",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "amount0",
+          "type": "int256"
+        },
+        {
+          "internalType": "int256",
+          "name": "amount1",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount0",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount1",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "flash",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "observationCardinalityNext",
+          "type": "uint16"
+        }
+      ],
+      "name": "increaseObservationCardinalityNext",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"},{\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"},{\"internalType\":\"uint128\",\"name\":\"amount\",\"type\":\"uint128\"}],\"name\":\"burn\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amount0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount1\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"},{\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"},{\"internalType\":\"uint128\",\"name\":\"amount0Requested\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"amount1Requested\",\"type\":\"uint128\"}],\"name\":\"collect\",\"outputs\":[{\"internalType\":\"uint128\",\"name\":\"amount0\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"amount1\",\"type\":\"uint128\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount1\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"flash\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint16\",\"name\":\"observationCardinalityNext\",\"type\":\"uint16\"}],\"name\":\"increaseObservationCardinalityNext\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint160\",\"name\":\"sqrtPriceX96\",\"type\":\"uint160\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"},{\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"},{\"internalType\":\"uint128\",\"name\":\"amount\",\"type\":\"uint128\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"mint\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"amount0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amount1\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"recipient\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"zeroForOne\",\"type\":\"bool\"},{\"internalType\":\"int256\",\"name\":\"amountSpecified\",\"type\":\"int256\"},{\"internalType\":\"uint160\",\"name\":\"sqrtPriceLimitX96\",\"type\":\"uint160\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"swap\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"amount0\",\"type\":\"int256\"},{\"internalType\":\"int256\",\"name\":\"amount1\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"burn(int24,int24,uint128)\":{\"details\":\"Can be used to trigger a recalculation of fees owed to a position by calling with an amount of 0Fees must be collected separately via a call to #collect\",\"params\":{\"amount\":\"How much liquidity to burn\",\"tickLower\":\"The lower tick of the position for which to burn liquidity\",\"tickUpper\":\"The upper tick of the position for which to burn liquidity\"},\"returns\":{\"amount0\":\"The amount of token0 sent to the recipient\",\"amount1\":\"The amount of token1 sent to the recipient\"}},\"collect(address,int24,int24,uint128,uint128)\":{\"details\":\"Does not recompute fees earned, which must be done either via mint or burn of any amount of liquidity. Collect must be called by the position owner. To withdraw only token0 or only token1, amount0Requested or amount1Requested may be set to zero. To withdraw all tokens owed, caller may pass any value greater than the actual tokens owed, e.g. type(uint128).max. Tokens owed may be from accumulated swap fees or burned liquidity.\",\"params\":{\"amount0Requested\":\"How much token0 should be withdrawn from the fees owed\",\"amount1Requested\":\"How much token1 should be withdrawn from the fees owed\",\"recipient\":\"The address which should receive the fees collected\",\"tickLower\":\"The lower tick of the position for which to collect fees\",\"tickUpper\":\"The upper tick of the position for which to collect fees\"},\"returns\":{\"amount0\":\"The amount of fees collected in token0\",\"amount1\":\"The amount of fees collected in token1\"}},\"flash(address,uint256,uint256,bytes)\":{\"details\":\"The caller of this method receives a callback in the form of IUniswapV3FlashCallback#uniswapV3FlashCallbackCan be used to donate underlying tokens pro-rata to currently in-range liquidity providers by calling with 0 amount{0,1} and sending the donation amount(s) from the callback\",\"params\":{\"amount0\":\"The amount of token0 to send\",\"amount1\":\"The amount of token1 to send\",\"data\":\"Any data to be passed through to the callback\",\"recipient\":\"The address which will receive the token0 and token1 amounts\"}},\"increaseObservationCardinalityNext(uint16)\":{\"details\":\"This method is no-op if the pool already has an observationCardinalityNext greater than or equal to the input observationCardinalityNext.\",\"params\":{\"observationCardinalityNext\":\"The desired minimum number of observations for the pool to store\"}},\"initialize(uint160)\":{\"details\":\"Price is represented as a sqrt(amountToken1/amountToken0) Q64.96 value\",\"params\":{\"sqrtPriceX96\":\"the initial sqrt price of the pool as a Q64.96\"}},\"mint(address,int24,int24,uint128,bytes)\":{\"details\":\"The caller of this method receives a callback in the form of IUniswapV3MintCallback#uniswapV3MintCallback in which they must pay any token0 or token1 owed for the liquidity. The amount of token0/token1 due depends on tickLower, tickUpper, the amount of liquidity, and the current price.\",\"params\":{\"amount\":\"The amount of liquidity to mint\",\"data\":\"Any data that should be passed through to the callback\",\"recipient\":\"The address for which the liquidity will be created\",\"tickLower\":\"The lower tick of the position in which to add liquidity\",\"tickUpper\":\"The upper tick of the position in which to add liquidity\"},\"returns\":{\"amount0\":\"The amount of token0 that was paid to mint the given amount of liquidity. Matches the value in the callback\",\"amount1\":\"The amount of token1 that was paid to mint the given amount of liquidity. Matches the value in the callback\"}},\"swap(address,bool,int256,uint160,bytes)\":{\"details\":\"The caller of this method receives a callback in the form of IUniswapV3SwapCallback#uniswapV3SwapCallback\",\"params\":{\"amountSpecified\":\"The amount of the swap, which implicitly configures the swap as exact input (positive), or exact output (negative)\",\"data\":\"Any data to be passed through to the callback\",\"recipient\":\"The address to receive the output of the swap\",\"sqrtPriceLimitX96\":\"The Q64.96 sqrt price limit. If zero for one, the price cannot be less than this value after the swap. If one for zero, the price cannot be greater than this value after the swap\",\"zeroForOne\":\"The direction of the swap, true for token0 to token1, false for token1 to token0\"},\"returns\":{\"amount0\":\"The delta of the balance of token0 of the pool, exact when negative, minimum when positive\",\"amount1\":\"The delta of the balance of token1 of the pool, exact when negative, minimum when positive\"}}},\"title\":\"Permissionless pool actions\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"burn(int24,int24,uint128)\":{\"notice\":\"Burn liquidity from the sender and account tokens owed for the liquidity to the position\"},\"collect(address,int24,int24,uint128,uint128)\":{\"notice\":\"Collects tokens owed to a position\"},\"flash(address,uint256,uint256,bytes)\":{\"notice\":\"Receive token0 and/or token1 and pay it back, plus a fee, in the callback\"},\"increaseObservationCardinalityNext(uint16)\":{\"notice\":\"Increase the maximum number of price and liquidity observations that this pool will store\"},\"initialize(uint160)\":{\"notice\":\"Sets the initial price for the pool\"},\"mint(address,int24,int24,uint128,bytes)\":{\"notice\":\"Adds liquidity for the given recipient/tickLower/tickUpper position\"},\"swap(address,bool,int256,uint160,bytes)\":{\"notice\":\"Swap token0 for token1, or token1 for token0\"}},\"notice\":\"Contains pool methods that can be called by anyone\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol\":\"IUniswapV3PoolActions\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":300},\"remappings\":[]},\"sources\":{\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol\":{\"keccak256\":\"0x9453dd0e7442188667d01d9b65de3f1e14e9511ff3e303179a15f6fc267f7634\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://982f4328f956c3e60e67501e759eb292ac487f76460c774c50e9ae4fcc92aae5\",\"dweb:/ipfs/QmRnzEDsaqtd9PJEVcgQi7p5aV5pMSvRUoGZJAdwFUJxgZ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: GPL-2.0-or-later\npragma solidity >=0.5.0;\n\n/// @title Permissionless pool actions\n/// @notice Contains pool methods that can be called by anyone\ninterface IUniswapV3PoolActions {\n    /// @notice Sets the initial price for the pool\n    /// @dev Price is represented as a sqrt(amountToken1/amountToken0) Q64.96 value\n    /// @param sqrtPriceX96 the initial sqrt price of the pool as a Q64.96\n    function initialize(uint160 sqrtPriceX96) external;\n\n    /// @notice Adds liquidity for the given recipient/tickLower/tickUpper position\n    /// @dev The caller of this method receives a callback in the form of IUniswapV3MintCallback#uniswapV3MintCallback\n    /// in which they must pay any token0 or token1 owed for the liquidity. The amount of token0/token1 due depends\n    /// on tickLower, tickUpper, the amount of liquidity, and the current price.\n    /// @param recipient The address for which the liquidity will be created\n    /// @param tickLower The lower tick of the position in which to add liquidity\n    /// @param tickUpper The upper tick of the position in which to add liquidity\n    /// @param amount The amount of liquidity to mint\n    /// @param data Any data that should be passed through to the callback\n    /// @return amount0 The amount of token0 that was paid to mint the given amount of liquidity. Matches the value in the callback\n    /// @return amount1 The amount of token1 that was paid to mint the given amount of liquidity. Matches the value in the callback\n    function mint(\n        address recipient,\n        int24 tickLower,\n        int24 tickUpper,\n        uint128 amount,\n        bytes calldata data\n    ) external returns (uint256 amount0, uint256 amount1);\n\n    /// @notice Collects tokens owed to a position\n    /// @dev Does not recompute fees earned, which must be done either via mint or burn of any amount of liquidity.\n    /// Collect must be called by the position owner. To withdraw only token0 or only token1, amount0Requested or\n    /// amount1Requested may be set to zero. To withdraw all tokens owed, caller may pass any value greater than the\n    /// actual tokens owed, e.g. type(uint128).max. Tokens owed may be from accumulated swap fees or burned liquidity.\n    /// @param recipient The address which should receive the fees collected\n    /// @param tickLower The lower tick of the position for which to collect fees\n    /// @param tickUpper The upper tick of the position for which to collect fees\n    /// @param amount0Requested How much token0 should be withdrawn from the fees owed\n    /// @param amount1Requested How much token1 should be withdrawn from the fees owed\n    /// @return amount0 The amount of fees collected in token0\n    /// @return amount1 The amount of fees collected in token1\n    function collect(\n        address recipient,\n        int24 tickLower,\n        int24 tickUpper,\n        uint128 amount0Requested,\n        uint128 amount1Requested\n    ) external returns (uint128 amount0, uint128 amount1);\n\n    /// @notice Burn liquidity from the sender and account tokens owed for the liquidity to the position\n    /// @dev Can be used to trigger a recalculation of fees owed to a position by calling with an amount of 0\n    /// @dev Fees must be collected separately via a call to #collect\n    /// @param tickLower The lower tick of the position for which to burn liquidity\n    /// @param tickUpper The upper tick of the position for which to burn liquidity\n    /// @param amount How much liquidity to burn\n    /// @return amount0 The amount of token0 sent to the recipient\n    /// @return amount1 The amount of token1 sent to the recipient\n    function burn(\n        int24 tickLower,\n        int24 tickUpper,\n        uint128 amount\n    ) external returns (uint256 amount0, uint256 amount1);\n\n    /// @notice Swap token0 for token1, or token1 for token0\n    /// @dev The caller of this method receives a callback in the form of IUniswapV3SwapCallback#uniswapV3SwapCallback\n    /// @param recipient The address to receive the output of the swap\n    /// @param zeroForOne The direction of the swap, true for token0 to token1, false for token1 to token0\n    /// @param amountSpecified The amount of the swap, which implicitly configures the swap as exact input (positive), or exact output (negative)\n    /// @param sqrtPriceLimitX96 The Q64.96 sqrt price limit. If zero for one, the price cannot be less than this\n    /// value after the swap. If one for zero, the price cannot be greater than this value after the swap\n    /// @param data Any data to be passed through to the callback\n    /// @return amount0 The delta of the balance of token0 of the pool, exact when negative, minimum when positive\n    /// @return amount1 The delta of the balance of token1 of the pool, exact when negative, minimum when positive\n    function swap(\n        address recipient,\n        bool zeroForOne,\n        int256 amountSpecified,\n        uint160 sqrtPriceLimitX96,\n        bytes calldata data\n    ) external returns (int256 amount0, int256 amount1);\n\n    /// @notice Receive token0 and/or token1 and pay it back, plus a fee, in the callback\n    /// @dev The caller of this method receives a callback in the form of IUniswapV3FlashCallback#uniswapV3FlashCallback\n    /// @dev Can be used to donate underlying tokens pro-rata to currently in-range liquidity providers by calling\n    /// with 0 amount{0,1} and sending the donation amount(s) from the callback\n    /// @param recipient The address which will receive the token0 and token1 amounts\n    /// @param amount0 The amount of token0 to send\n    /// @param amount1 The amount of token1 to send\n    /// @param data Any data to be passed through to the callback\n    function flash(\n        address recipient,\n        uint256 amount0,\n        uint256 amount1,\n        bytes calldata data\n    ) external;\n\n    /// @notice Increase the maximum number of price and liquidity observations that this pool will store\n    /// @dev This method is no-op if the pool already has an observationCardinalityNext greater than or equal to\n    /// the input observationCardinalityNext.\n    /// @param observationCardinalityNext The desired minimum number of observations for the pool to store\n    function increaseObservationCardinalityNext(uint16 observationCardinalityNext) external;\n}\n",
+  "sourcePath": "@uniswap\\v3-core\\contracts\\interfaces\\pool\\IUniswapV3PoolActions.sol",
+  "ast": {
+    "absolutePath": "@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+    "exportedSymbols": {
+      "IUniswapV3PoolActions": [
+        3549
+      ]
+    },
+    "id": 3550,
+    "license": "GPL-2.0-or-later",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3455,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "45:24:18"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 3456,
+          "nodeType": "StructuredDocumentation",
+          "src": "71:102:18",
+          "text": "@title Permissionless pool actions\n @notice Contains pool methods that can be called by anyone"
+        },
+        "fullyImplemented": false,
+        "id": 3549,
+        "linearizedBaseContracts": [
+          3549
+        ],
+        "name": "IUniswapV3PoolActions",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 3457,
+              "nodeType": "StructuredDocumentation",
+              "src": "211:206:18",
+              "text": "@notice Sets the initial price for the pool\n @dev Price is represented as a sqrt(amountToken1/amountToken0) Q64.96 value\n @param sqrtPriceX96 the initial sqrt price of the pool as a Q64.96"
+            },
+            "functionSelector": "f637731d",
+            "id": 3462,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3460,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3459,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3462,
+                  "src": "442:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 3458,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "442:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "441:22:18"
+            },
+            "returnParameters": {
+              "id": 3461,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "472:0:18"
+            },
+            "scope": 3549,
+            "src": "422:51:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3463,
+              "nodeType": "StructuredDocumentation",
+              "src": "479:1029:18",
+              "text": "@notice Adds liquidity for the given recipient/tickLower/tickUpper position\n @dev The caller of this method receives a callback in the form of IUniswapV3MintCallback#uniswapV3MintCallback\n in which they must pay any token0 or token1 owed for the liquidity. The amount of token0/token1 due depends\n on tickLower, tickUpper, the amount of liquidity, and the current price.\n @param recipient The address for which the liquidity will be created\n @param tickLower The lower tick of the position in which to add liquidity\n @param tickUpper The upper tick of the position in which to add liquidity\n @param amount The amount of liquidity to mint\n @param data Any data that should be passed through to the callback\n @return amount0 The amount of token0 that was paid to mint the given amount of liquidity. Matches the value in the callback\n @return amount1 The amount of token1 that was paid to mint the given amount of liquidity. Matches the value in the callback"
+            },
+            "functionSelector": "3c8a7d8d",
+            "id": 3480,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3474,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3465,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1536:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3464,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1536:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3467,
+                  "mutability": "mutable",
+                  "name": "tickLower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1563:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3466,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1563:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3469,
+                  "mutability": "mutable",
+                  "name": "tickUpper",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1588:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3468,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1588:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3471,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1613:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 3470,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1613:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3473,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1637:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3472,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1637:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1526:136:18"
+            },
+            "returnParameters": {
+              "id": 3479,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3476,
+                  "mutability": "mutable",
+                  "name": "amount0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1681:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3475,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1681:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3478,
+                  "mutability": "mutable",
+                  "name": "amount1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3480,
+                  "src": "1698:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3477,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1698:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1680:34:18"
+            },
+            "scope": 3549,
+            "src": "1513:202:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3481,
+              "nodeType": "StructuredDocumentation",
+              "src": "1721:1053:18",
+              "text": "@notice Collects tokens owed to a position\n @dev Does not recompute fees earned, which must be done either via mint or burn of any amount of liquidity.\n Collect must be called by the position owner. To withdraw only token0 or only token1, amount0Requested or\n amount1Requested may be set to zero. To withdraw all tokens owed, caller may pass any value greater than the\n actual tokens owed, e.g. type(uint128).max. Tokens owed may be from accumulated swap fees or burned liquidity.\n @param recipient The address which should receive the fees collected\n @param tickLower The lower tick of the position for which to collect fees\n @param tickUpper The upper tick of the position for which to collect fees\n @param amount0Requested How much token0 should be withdrawn from the fees owed\n @param amount1Requested How much token1 should be withdrawn from the fees owed\n @return amount0 The amount of fees collected in token0\n @return amount1 The amount of fees collected in token1"
+            },
+            "functionSelector": "4f1eb3d8",
+            "id": 3498,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "collect",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3492,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3483,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2805:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3482,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2805:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3485,
+                  "mutability": "mutable",
+                  "name": "tickLower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2832:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3484,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2832:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3487,
+                  "mutability": "mutable",
+                  "name": "tickUpper",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2857:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3486,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2857:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3489,
+                  "mutability": "mutable",
+                  "name": "amount0Requested",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2882:24:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 3488,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2882:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3491,
+                  "mutability": "mutable",
+                  "name": "amount1Requested",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2916:24:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 3490,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2916:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2795:151:18"
+            },
+            "returnParameters": {
+              "id": 3497,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3494,
+                  "mutability": "mutable",
+                  "name": "amount0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2965:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 3493,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2965:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3496,
+                  "mutability": "mutable",
+                  "name": "amount1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3498,
+                  "src": "2982:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 3495,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2982:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2964:34:18"
+            },
+            "scope": 3549,
+            "src": "2779:220:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3499,
+              "nodeType": "StructuredDocumentation",
+              "src": "3005:631:18",
+              "text": "@notice Burn liquidity from the sender and account tokens owed for the liquidity to the position\n @dev Can be used to trigger a recalculation of fees owed to a position by calling with an amount of 0\n @dev Fees must be collected separately via a call to #collect\n @param tickLower The lower tick of the position for which to burn liquidity\n @param tickUpper The upper tick of the position for which to burn liquidity\n @param amount How much liquidity to burn\n @return amount0 The amount of token0 sent to the recipient\n @return amount1 The amount of token1 sent to the recipient"
+            },
+            "functionSelector": "a34123a7",
+            "id": 3512,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3506,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3501,
+                  "mutability": "mutable",
+                  "name": "tickLower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3512,
+                  "src": "3664:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3500,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3664:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3503,
+                  "mutability": "mutable",
+                  "name": "tickUpper",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3512,
+                  "src": "3689:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 3502,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3689:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3505,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3512,
+                  "src": "3714:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 3504,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3714:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3654:80:18"
+            },
+            "returnParameters": {
+              "id": 3511,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3508,
+                  "mutability": "mutable",
+                  "name": "amount0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3512,
+                  "src": "3753:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3507,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3753:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3510,
+                  "mutability": "mutable",
+                  "name": "amount1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3512,
+                  "src": "3770:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3509,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3770:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3752:34:18"
+            },
+            "scope": 3549,
+            "src": "3641:146:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3513,
+              "nodeType": "StructuredDocumentation",
+              "src": "3793:1015:18",
+              "text": "@notice Swap token0 for token1, or token1 for token0\n @dev The caller of this method receives a callback in the form of IUniswapV3SwapCallback#uniswapV3SwapCallback\n @param recipient The address to receive the output of the swap\n @param zeroForOne The direction of the swap, true for token0 to token1, false for token1 to token0\n @param amountSpecified The amount of the swap, which implicitly configures the swap as exact input (positive), or exact output (negative)\n @param sqrtPriceLimitX96 The Q64.96 sqrt price limit. If zero for one, the price cannot be less than this\n value after the swap. If one for zero, the price cannot be greater than this value after the swap\n @param data Any data to be passed through to the callback\n @return amount0 The delta of the balance of token0 of the pool, exact when negative, minimum when positive\n @return amount1 The delta of the balance of token1 of the pool, exact when negative, minimum when positive"
+            },
+            "functionSelector": "128acb08",
+            "id": 3530,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "swap",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3524,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3515,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "4836:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3514,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4836:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3517,
+                  "mutability": "mutable",
+                  "name": "zeroForOne",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "4863:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 3516,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4863:4:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3519,
+                  "mutability": "mutable",
+                  "name": "amountSpecified",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "4888:22:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 3518,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4888:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3521,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceLimitX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "4920:25:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 3520,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4920:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3523,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "4955:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3522,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4955:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4826:154:18"
+            },
+            "returnParameters": {
+              "id": 3529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3526,
+                  "mutability": "mutable",
+                  "name": "amount0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "4999:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 3525,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4999:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3528,
+                  "mutability": "mutable",
+                  "name": "amount1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3530,
+                  "src": "5015:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 3527,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5015:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4998:32:18"
+            },
+            "scope": 3549,
+            "src": "4813:218:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3531,
+              "nodeType": "StructuredDocumentation",
+              "src": "5037:657:18",
+              "text": "@notice Receive token0 and/or token1 and pay it back, plus a fee, in the callback\n @dev The caller of this method receives a callback in the form of IUniswapV3FlashCallback#uniswapV3FlashCallback\n @dev Can be used to donate underlying tokens pro-rata to currently in-range liquidity providers by calling\n with 0 amount{0,1} and sending the donation amount(s) from the callback\n @param recipient The address which will receive the token0 and token1 amounts\n @param amount0 The amount of token0 to send\n @param amount1 The amount of token1 to send\n @param data Any data to be passed through to the callback"
+            },
+            "functionSelector": "490e6cbc",
+            "id": 3542,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "flash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3540,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3533,
+                  "mutability": "mutable",
+                  "name": "recipient",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3542,
+                  "src": "5723:17:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3532,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5723:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3535,
+                  "mutability": "mutable",
+                  "name": "amount0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3542,
+                  "src": "5750:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3534,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5750:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3537,
+                  "mutability": "mutable",
+                  "name": "amount1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3542,
+                  "src": "5775:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3536,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5775:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3539,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3542,
+                  "src": "5800:19:18",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 3538,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5800:5:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5713:112:18"
+            },
+            "returnParameters": {
+              "id": 3541,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5834:0:18"
+            },
+            "scope": 3549,
+            "src": "5699:136:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 3543,
+              "nodeType": "StructuredDocumentation",
+              "src": "5841:367:18",
+              "text": "@notice Increase the maximum number of price and liquidity observations that this pool will store\n @dev This method is no-op if the pool already has an observationCardinalityNext greater than or equal to\n the input observationCardinalityNext.\n @param observationCardinalityNext The desired minimum number of observations for the pool to store"
+            },
+            "functionSelector": "32148f67",
+            "id": 3548,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increaseObservationCardinalityNext",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3546,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3545,
+                  "mutability": "mutable",
+                  "name": "observationCardinalityNext",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3548,
+                  "src": "6257:33:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint16",
+                    "typeString": "uint16"
+                  },
+                  "typeName": {
+                    "id": 3544,
+                    "name": "uint16",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6257:6:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint16",
+                      "typeString": "uint16"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6256:35:18"
+            },
+            "returnParameters": {
+              "id": 3547,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6300:0:18"
+            },
+            "scope": 3549,
+            "src": "6213:88:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3550,
+        "src": "173:6130:18"
+      }
+    ],
+    "src": "45:6259:18"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+      "exportedSymbols": {
+        "IUniswapV3PoolActions": [
+          3549
+        ]
+      },
+      "license": "GPL-2.0-or-later"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 3455,
+        "name": "PragmaDirective",
+        "src": "45:24:18"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            3549
+          ],
+          "name": "IUniswapV3PoolActions",
+          "scope": 3550
+        },
+        "children": [
+          {
+            "attributes": {
+              "text": "@title Permissionless pool actions\n @notice Contains pool methods that can be called by anyone"
+            },
+            "id": 3456,
+            "name": "StructuredDocumentation",
+            "src": "71:102:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "f637731d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "initialize",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Sets the initial price for the pool\n @dev Price is represented as a sqrt(amountToken1/amountToken0) Q64.96 value\n @param sqrtPriceX96 the initial sqrt price of the pool as a Q64.96"
+                },
+                "id": 3457,
+                "name": "StructuredDocumentation",
+                "src": "211:206:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceX96",
+                      "scope": 3462,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 3458,
+                        "name": "ElementaryTypeName",
+                        "src": "442:7:18"
+                      }
+                    ],
+                    "id": 3459,
+                    "name": "VariableDeclaration",
+                    "src": "442:20:18"
+                  }
+                ],
+                "id": 3460,
+                "name": "ParameterList",
+                "src": "441:22:18"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3461,
+                "name": "ParameterList",
+                "src": "472:0:18"
+              }
+            ],
+            "id": 3462,
+            "name": "FunctionDefinition",
+            "src": "422:51:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "3c8a7d8d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "mint",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Adds liquidity for the given recipient/tickLower/tickUpper position\n @dev The caller of this method receives a callback in the form of IUniswapV3MintCallback#uniswapV3MintCallback\n in which they must pay any token0 or token1 owed for the liquidity. The amount of token0/token1 due depends\n on tickLower, tickUpper, the amount of liquidity, and the current price.\n @param recipient The address for which the liquidity will be created\n @param tickLower The lower tick of the position in which to add liquidity\n @param tickUpper The upper tick of the position in which to add liquidity\n @param amount The amount of liquidity to mint\n @param data Any data that should be passed through to the callback\n @return amount0 The amount of token0 that was paid to mint the given amount of liquidity. Matches the value in the callback\n @return amount1 The amount of token1 that was paid to mint the given amount of liquidity. Matches the value in the callback"
+                },
+                "id": 3463,
+                "name": "StructuredDocumentation",
+                "src": "479:1029:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "recipient",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 3464,
+                        "name": "ElementaryTypeName",
+                        "src": "1536:7:18"
+                      }
+                    ],
+                    "id": 3465,
+                    "name": "VariableDeclaration",
+                    "src": "1536:17:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickLower",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3466,
+                        "name": "ElementaryTypeName",
+                        "src": "1563:5:18"
+                      }
+                    ],
+                    "id": 3467,
+                    "name": "VariableDeclaration",
+                    "src": "1563:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickUpper",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3468,
+                        "name": "ElementaryTypeName",
+                        "src": "1588:5:18"
+                      }
+                    ],
+                    "id": 3469,
+                    "name": "VariableDeclaration",
+                    "src": "1588:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 3470,
+                        "name": "ElementaryTypeName",
+                        "src": "1613:7:18"
+                      }
+                    ],
+                    "id": 3471,
+                    "name": "VariableDeclaration",
+                    "src": "1613:14:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3472,
+                        "name": "ElementaryTypeName",
+                        "src": "1637:5:18"
+                      }
+                    ],
+                    "id": 3473,
+                    "name": "VariableDeclaration",
+                    "src": "1637:19:18"
+                  }
+                ],
+                "id": 3474,
+                "name": "ParameterList",
+                "src": "1526:136:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount0",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3475,
+                        "name": "ElementaryTypeName",
+                        "src": "1681:7:18"
+                      }
+                    ],
+                    "id": 3476,
+                    "name": "VariableDeclaration",
+                    "src": "1681:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount1",
+                      "scope": 3480,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3477,
+                        "name": "ElementaryTypeName",
+                        "src": "1698:7:18"
+                      }
+                    ],
+                    "id": 3478,
+                    "name": "VariableDeclaration",
+                    "src": "1698:15:18"
+                  }
+                ],
+                "id": 3479,
+                "name": "ParameterList",
+                "src": "1680:34:18"
+              }
+            ],
+            "id": 3480,
+            "name": "FunctionDefinition",
+            "src": "1513:202:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "4f1eb3d8",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "collect",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Collects tokens owed to a position\n @dev Does not recompute fees earned, which must be done either via mint or burn of any amount of liquidity.\n Collect must be called by the position owner. To withdraw only token0 or only token1, amount0Requested or\n amount1Requested may be set to zero. To withdraw all tokens owed, caller may pass any value greater than the\n actual tokens owed, e.g. type(uint128).max. Tokens owed may be from accumulated swap fees or burned liquidity.\n @param recipient The address which should receive the fees collected\n @param tickLower The lower tick of the position for which to collect fees\n @param tickUpper The upper tick of the position for which to collect fees\n @param amount0Requested How much token0 should be withdrawn from the fees owed\n @param amount1Requested How much token1 should be withdrawn from the fees owed\n @return amount0 The amount of fees collected in token0\n @return amount1 The amount of fees collected in token1"
+                },
+                "id": 3481,
+                "name": "StructuredDocumentation",
+                "src": "1721:1053:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "recipient",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 3482,
+                        "name": "ElementaryTypeName",
+                        "src": "2805:7:18"
+                      }
+                    ],
+                    "id": 3483,
+                    "name": "VariableDeclaration",
+                    "src": "2805:17:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickLower",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3484,
+                        "name": "ElementaryTypeName",
+                        "src": "2832:5:18"
+                      }
+                    ],
+                    "id": 3485,
+                    "name": "VariableDeclaration",
+                    "src": "2832:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickUpper",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3486,
+                        "name": "ElementaryTypeName",
+                        "src": "2857:5:18"
+                      }
+                    ],
+                    "id": 3487,
+                    "name": "VariableDeclaration",
+                    "src": "2857:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount0Requested",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 3488,
+                        "name": "ElementaryTypeName",
+                        "src": "2882:7:18"
+                      }
+                    ],
+                    "id": 3489,
+                    "name": "VariableDeclaration",
+                    "src": "2882:24:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount1Requested",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 3490,
+                        "name": "ElementaryTypeName",
+                        "src": "2916:7:18"
+                      }
+                    ],
+                    "id": 3491,
+                    "name": "VariableDeclaration",
+                    "src": "2916:24:18"
+                  }
+                ],
+                "id": 3492,
+                "name": "ParameterList",
+                "src": "2795:151:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount0",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 3493,
+                        "name": "ElementaryTypeName",
+                        "src": "2965:7:18"
+                      }
+                    ],
+                    "id": 3494,
+                    "name": "VariableDeclaration",
+                    "src": "2965:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount1",
+                      "scope": 3498,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 3495,
+                        "name": "ElementaryTypeName",
+                        "src": "2982:7:18"
+                      }
+                    ],
+                    "id": 3496,
+                    "name": "VariableDeclaration",
+                    "src": "2982:15:18"
+                  }
+                ],
+                "id": 3497,
+                "name": "ParameterList",
+                "src": "2964:34:18"
+              }
+            ],
+            "id": 3498,
+            "name": "FunctionDefinition",
+            "src": "2779:220:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "a34123a7",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "burn",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Burn liquidity from the sender and account tokens owed for the liquidity to the position\n @dev Can be used to trigger a recalculation of fees owed to a position by calling with an amount of 0\n @dev Fees must be collected separately via a call to #collect\n @param tickLower The lower tick of the position for which to burn liquidity\n @param tickUpper The upper tick of the position for which to burn liquidity\n @param amount How much liquidity to burn\n @return amount0 The amount of token0 sent to the recipient\n @return amount1 The amount of token1 sent to the recipient"
+                },
+                "id": 3499,
+                "name": "StructuredDocumentation",
+                "src": "3005:631:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickLower",
+                      "scope": 3512,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3500,
+                        "name": "ElementaryTypeName",
+                        "src": "3664:5:18"
+                      }
+                    ],
+                    "id": 3501,
+                    "name": "VariableDeclaration",
+                    "src": "3664:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickUpper",
+                      "scope": 3512,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 3502,
+                        "name": "ElementaryTypeName",
+                        "src": "3689:5:18"
+                      }
+                    ],
+                    "id": 3503,
+                    "name": "VariableDeclaration",
+                    "src": "3689:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount",
+                      "scope": 3512,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 3504,
+                        "name": "ElementaryTypeName",
+                        "src": "3714:7:18"
+                      }
+                    ],
+                    "id": 3505,
+                    "name": "VariableDeclaration",
+                    "src": "3714:14:18"
+                  }
+                ],
+                "id": 3506,
+                "name": "ParameterList",
+                "src": "3654:80:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount0",
+                      "scope": 3512,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3507,
+                        "name": "ElementaryTypeName",
+                        "src": "3753:7:18"
+                      }
+                    ],
+                    "id": 3508,
+                    "name": "VariableDeclaration",
+                    "src": "3753:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount1",
+                      "scope": 3512,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3509,
+                        "name": "ElementaryTypeName",
+                        "src": "3770:7:18"
+                      }
+                    ],
+                    "id": 3510,
+                    "name": "VariableDeclaration",
+                    "src": "3770:15:18"
+                  }
+                ],
+                "id": 3511,
+                "name": "ParameterList",
+                "src": "3752:34:18"
+              }
+            ],
+            "id": 3512,
+            "name": "FunctionDefinition",
+            "src": "3641:146:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "128acb08",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "swap",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Swap token0 for token1, or token1 for token0\n @dev The caller of this method receives a callback in the form of IUniswapV3SwapCallback#uniswapV3SwapCallback\n @param recipient The address to receive the output of the swap\n @param zeroForOne The direction of the swap, true for token0 to token1, false for token1 to token0\n @param amountSpecified The amount of the swap, which implicitly configures the swap as exact input (positive), or exact output (negative)\n @param sqrtPriceLimitX96 The Q64.96 sqrt price limit. If zero for one, the price cannot be less than this\n value after the swap. If one for zero, the price cannot be greater than this value after the swap\n @param data Any data to be passed through to the callback\n @return amount0 The delta of the balance of token0 of the pool, exact when negative, minimum when positive\n @return amount1 The delta of the balance of token1 of the pool, exact when negative, minimum when positive"
+                },
+                "id": 3513,
+                "name": "StructuredDocumentation",
+                "src": "3793:1015:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "recipient",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 3514,
+                        "name": "ElementaryTypeName",
+                        "src": "4836:7:18"
+                      }
+                    ],
+                    "id": 3515,
+                    "name": "VariableDeclaration",
+                    "src": "4836:17:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "zeroForOne",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 3516,
+                        "name": "ElementaryTypeName",
+                        "src": "4863:4:18"
+                      }
+                    ],
+                    "id": 3517,
+                    "name": "VariableDeclaration",
+                    "src": "4863:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountSpecified",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int256",
+                          "type": "int256"
+                        },
+                        "id": 3518,
+                        "name": "ElementaryTypeName",
+                        "src": "4888:6:18"
+                      }
+                    ],
+                    "id": 3519,
+                    "name": "VariableDeclaration",
+                    "src": "4888:22:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceLimitX96",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 3520,
+                        "name": "ElementaryTypeName",
+                        "src": "4920:7:18"
+                      }
+                    ],
+                    "id": 3521,
+                    "name": "VariableDeclaration",
+                    "src": "4920:25:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3522,
+                        "name": "ElementaryTypeName",
+                        "src": "4955:5:18"
+                      }
+                    ],
+                    "id": 3523,
+                    "name": "VariableDeclaration",
+                    "src": "4955:19:18"
+                  }
+                ],
+                "id": 3524,
+                "name": "ParameterList",
+                "src": "4826:154:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount0",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int256",
+                          "type": "int256"
+                        },
+                        "id": 3525,
+                        "name": "ElementaryTypeName",
+                        "src": "4999:6:18"
+                      }
+                    ],
+                    "id": 3526,
+                    "name": "VariableDeclaration",
+                    "src": "4999:14:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount1",
+                      "scope": 3530,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int256",
+                          "type": "int256"
+                        },
+                        "id": 3527,
+                        "name": "ElementaryTypeName",
+                        "src": "5015:6:18"
+                      }
+                    ],
+                    "id": 3528,
+                    "name": "VariableDeclaration",
+                    "src": "5015:14:18"
+                  }
+                ],
+                "id": 3529,
+                "name": "ParameterList",
+                "src": "4998:32:18"
+              }
+            ],
+            "id": 3530,
+            "name": "FunctionDefinition",
+            "src": "4813:218:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "490e6cbc",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "flash",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Receive token0 and/or token1 and pay it back, plus a fee, in the callback\n @dev The caller of this method receives a callback in the form of IUniswapV3FlashCallback#uniswapV3FlashCallback\n @dev Can be used to donate underlying tokens pro-rata to currently in-range liquidity providers by calling\n with 0 amount{0,1} and sending the donation amount(s) from the callback\n @param recipient The address which will receive the token0 and token1 amounts\n @param amount0 The amount of token0 to send\n @param amount1 The amount of token1 to send\n @param data Any data to be passed through to the callback"
+                },
+                "id": 3531,
+                "name": "StructuredDocumentation",
+                "src": "5037:657:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "recipient",
+                      "scope": 3542,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 3532,
+                        "name": "ElementaryTypeName",
+                        "src": "5723:7:18"
+                      }
+                    ],
+                    "id": 3533,
+                    "name": "VariableDeclaration",
+                    "src": "5723:17:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount0",
+                      "scope": 3542,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3534,
+                        "name": "ElementaryTypeName",
+                        "src": "5750:7:18"
+                      }
+                    ],
+                    "id": 3535,
+                    "name": "VariableDeclaration",
+                    "src": "5750:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amount1",
+                      "scope": 3542,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 3536,
+                        "name": "ElementaryTypeName",
+                        "src": "5775:7:18"
+                      }
+                    ],
+                    "id": 3537,
+                    "name": "VariableDeclaration",
+                    "src": "5775:15:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "data",
+                      "scope": 3542,
+                      "stateVariable": false,
+                      "storageLocation": "calldata",
+                      "type": "bytes",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 3538,
+                        "name": "ElementaryTypeName",
+                        "src": "5800:5:18"
+                      }
+                    ],
+                    "id": 3539,
+                    "name": "VariableDeclaration",
+                    "src": "5800:19:18"
+                  }
+                ],
+                "id": 3540,
+                "name": "ParameterList",
+                "src": "5713:112:18"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3541,
+                "name": "ParameterList",
+                "src": "5834:0:18"
+              }
+            ],
+            "id": 3542,
+            "name": "FunctionDefinition",
+            "src": "5699:136:18"
+          },
+          {
+            "attributes": {
+              "functionSelector": "32148f67",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "increaseObservationCardinalityNext",
+              "scope": 3549,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Increase the maximum number of price and liquidity observations that this pool will store\n @dev This method is no-op if the pool already has an observationCardinalityNext greater than or equal to\n the input observationCardinalityNext.\n @param observationCardinalityNext The desired minimum number of observations for the pool to store"
+                },
+                "id": 3543,
+                "name": "StructuredDocumentation",
+                "src": "5841:367:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "observationCardinalityNext",
+                      "scope": 3548,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint16",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint16",
+                          "type": "uint16"
+                        },
+                        "id": 3544,
+                        "name": "ElementaryTypeName",
+                        "src": "6257:6:18"
+                      }
+                    ],
+                    "id": 3545,
+                    "name": "VariableDeclaration",
+                    "src": "6257:33:18"
+                  }
+                ],
+                "id": 3546,
+                "name": "ParameterList",
+                "src": "6256:35:18"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 3547,
+                "name": "ParameterList",
+                "src": "6300:0:18"
+              }
+            ],
+            "id": 3548,
+            "name": "FunctionDefinition",
+            "src": "6213:88:18"
+          }
+        ],
+        "id": 3549,
+        "name": "ContractDefinition",
+        "src": "173:6130:18"
+      }
+    ],
+    "id": 3550,
+    "name": "SourceUnit",
+    "src": "45:6259:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2023-05-09T15:26:17.861Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "burn(int24,int24,uint128)": {
+        "details": "Can be used to trigger a recalculation of fees owed to a position by calling with an amount of 0Fees must be collected separately via a call to #collect",
+        "params": {
+          "amount": "How much liquidity to burn",
+          "tickLower": "The lower tick of the position for which to burn liquidity",
+          "tickUpper": "The upper tick of the position for which to burn liquidity"
+        },
+        "returns": {
+          "amount0": "The amount of token0 sent to the recipient",
+          "amount1": "The amount of token1 sent to the recipient"
+        }
+      },
+      "collect(address,int24,int24,uint128,uint128)": {
+        "details": "Does not recompute fees earned, which must be done either via mint or burn of any amount of liquidity. Collect must be called by the position owner. To withdraw only token0 or only token1, amount0Requested or amount1Requested may be set to zero. To withdraw all tokens owed, caller may pass any value greater than the actual tokens owed, e.g. type(uint128).max. Tokens owed may be from accumulated swap fees or burned liquidity.",
+        "params": {
+          "amount0Requested": "How much token0 should be withdrawn from the fees owed",
+          "amount1Requested": "How much token1 should be withdrawn from the fees owed",
+          "recipient": "The address which should receive the fees collected",
+          "tickLower": "The lower tick of the position for which to collect fees",
+          "tickUpper": "The upper tick of the position for which to collect fees"
+        },
+        "returns": {
+          "amount0": "The amount of fees collected in token0",
+          "amount1": "The amount of fees collected in token1"
+        }
+      },
+      "flash(address,uint256,uint256,bytes)": {
+        "details": "The caller of this method receives a callback in the form of IUniswapV3FlashCallback#uniswapV3FlashCallbackCan be used to donate underlying tokens pro-rata to currently in-range liquidity providers by calling with 0 amount{0,1} and sending the donation amount(s) from the callback",
+        "params": {
+          "amount0": "The amount of token0 to send",
+          "amount1": "The amount of token1 to send",
+          "data": "Any data to be passed through to the callback",
+          "recipient": "The address which will receive the token0 and token1 amounts"
+        }
+      },
+      "increaseObservationCardinalityNext(uint16)": {
+        "details": "This method is no-op if the pool already has an observationCardinalityNext greater than or equal to the input observationCardinalityNext.",
+        "params": {
+          "observationCardinalityNext": "The desired minimum number of observations for the pool to store"
+        }
+      },
+      "initialize(uint160)": {
+        "details": "Price is represented as a sqrt(amountToken1/amountToken0) Q64.96 value",
+        "params": {
+          "sqrtPriceX96": "the initial sqrt price of the pool as a Q64.96"
+        }
+      },
+      "mint(address,int24,int24,uint128,bytes)": {
+        "details": "The caller of this method receives a callback in the form of IUniswapV3MintCallback#uniswapV3MintCallback in which they must pay any token0 or token1 owed for the liquidity. The amount of token0/token1 due depends on tickLower, tickUpper, the amount of liquidity, and the current price.",
+        "params": {
+          "amount": "The amount of liquidity to mint",
+          "data": "Any data that should be passed through to the callback",
+          "recipient": "The address for which the liquidity will be created",
+          "tickLower": "The lower tick of the position in which to add liquidity",
+          "tickUpper": "The upper tick of the position in which to add liquidity"
+        },
+        "returns": {
+          "amount0": "The amount of token0 that was paid to mint the given amount of liquidity. Matches the value in the callback",
+          "amount1": "The amount of token1 that was paid to mint the given amount of liquidity. Matches the value in the callback"
+        }
+      },
+      "swap(address,bool,int256,uint160,bytes)": {
+        "details": "The caller of this method receives a callback in the form of IUniswapV3SwapCallback#uniswapV3SwapCallback",
+        "params": {
+          "amountSpecified": "The amount of the swap, which implicitly configures the swap as exact input (positive), or exact output (negative)",
+          "data": "Any data to be passed through to the callback",
+          "recipient": "The address to receive the output of the swap",
+          "sqrtPriceLimitX96": "The Q64.96 sqrt price limit. If zero for one, the price cannot be less than this value after the swap. If one for zero, the price cannot be greater than this value after the swap",
+          "zeroForOne": "The direction of the swap, true for token0 to token1, false for token1 to token0"
+        },
+        "returns": {
+          "amount0": "The delta of the balance of token0 of the pool, exact when negative, minimum when positive",
+          "amount1": "The delta of the balance of token1 of the pool, exact when negative, minimum when positive"
+        }
+      }
+    },
+    "title": "Permissionless pool actions",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "burn(int24,int24,uint128)": {
+        "notice": "Burn liquidity from the sender and account tokens owed for the liquidity to the position"
+      },
+      "collect(address,int24,int24,uint128,uint128)": {
+        "notice": "Collects tokens owed to a position"
+      },
+      "flash(address,uint256,uint256,bytes)": {
+        "notice": "Receive token0 and/or token1 and pay it back, plus a fee, in the callback"
+      },
+      "increaseObservationCardinalityNext(uint16)": {
+        "notice": "Increase the maximum number of price and liquidity observations that this pool will store"
+      },
+      "initialize(uint160)": {
+        "notice": "Sets the initial price for the pool"
+      },
+      "mint(address,int24,int24,uint128,bytes)": {
+        "notice": "Adds liquidity for the given recipient/tickLower/tickUpper position"
+      },
+      "swap(address,bool,int256,uint160,bytes)": {
+        "notice": "Swap token0 for token1, or token1 for token0"
+      }
+    },
+    "notice": "Contains pool methods that can be called by anyone",
+    "version": 1
+  }
+}

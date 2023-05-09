@@ -1,0 +1,4805 @@
+{
+  "contractName": "IUniV3TradingPair",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        }
+      ],
+      "name": "Close",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "side",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "Open",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "side",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "executionPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "Settled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "trader",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newQuantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "SizeChanged",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onERC721Received",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "side",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "createOrder",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "increaseSize",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "name": "decreaseSize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "closePositionOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "settleOrder",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "settlerFees0",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "settlerFees1",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "returnPositionToUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPoolPrice",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "price",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getSide",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "side",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTickLower",
+      "outputs": [
+        {
+          "internalType": "int24",
+          "name": "tickLower",
+          "type": "int24"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getTickUpper",
+      "outputs": [
+        {
+          "internalType": "int24",
+          "name": "tickUpper",
+          "type": "int24"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getQuantity",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "positionId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getActivityStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "active",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "poolToken0",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "poolToken1",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"}],\"name\":\"Close\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"side\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint160\",\"name\":\"sqrtPriceX96\",\"type\":\"uint160\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"}],\"name\":\"Open\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"side\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"executionPrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"}],\"name\":\"Settled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newQuantity\",\"type\":\"uint256\"}],\"name\":\"SizeChanged\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"closePositionOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"side\",\"type\":\"bool\"},{\"internalType\":\"uint160\",\"name\":\"sqrtPriceX96\",\"type\":\"uint160\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"}],\"name\":\"createOrder\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"}],\"name\":\"decreaseSize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"getActivityStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"active\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"getOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPoolPrice\",\"outputs\":[{\"internalType\":\"uint160\",\"name\":\"price\",\"type\":\"uint160\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"getQuantity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"getSide\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"side\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"getTickLower\",\"outputs\":[{\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"getTickUpper\",\"outputs\":[{\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"quantity\",\"type\":\"uint256\"}],\"name\":\"increaseSize\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onERC721Received\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"poolToken0\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"poolToken1\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"returnPositionToUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"positionId\",\"type\":\"uint256\"}],\"name\":\"settleOrder\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"settlerFees0\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"settlerFees1\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"events\":{\"Close(uint256,address)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\",\"trader\":\"The address of the wallet that owns the position\"}},\"Open(uint256,address,bool,uint160,uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\",\"quantity\":\"Position size in token value\",\"side\":\"Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\",\"sqrtPriceX96\":\"The price of the order in the UniV3 format\",\"trader\":\"The address of the wallet that opened the position\"}},\"Settled(bool,uint256,address,uint256,uint256)\":{\"params\":{\"executionPrice\":\"The final execution price of the order (the average between the lower and upper boundary of the UniV3 LP)\",\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\",\"quantity\":\"Updated position quantity in token value\",\"side\":\"Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\",\"trader\":\"The address of the wallet that owns the position\"}},\"SizeChanged(uint256,address,uint256)\":{\"params\":{\"newQuantity\":\"Updated position quantity in token value\",\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\",\"trader\":\"The address of the wallet that owns the position\"}}},\"kind\":\"dev\",\"methods\":{\"closePositionOwner(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"}},\"createOrder(bool,uint160,uint256)\":{\"details\":\"This function handles native ETH and token payments\",\"params\":{\"quantity\":\"Position size in token value\",\"side\":\"Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\",\"sqrtPriceX96\":\"The price of the order in the UniV3 format\"},\"returns\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"}},\"decreaseSize(uint256,uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\",\"quantity\":\"The quantity you want to remove from the existing position\"}},\"getActivityStatus(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"active\":\"Position status (true: open, false: closed/filled)\"}},\"getOwner(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"_owner\":\"Position owner's address\"}},\"getPoolPrice()\":{\"returns\":{\"price\":\"current pool price as sqrtPriceX96\"}},\"getQuantity(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"quantity\":\"Position size in token value\"}},\"getSide(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"side\":\"Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\"}},\"getTickLower(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"tickLower\":\"lower price tick for position\"}},\"getTickUpper(uint256)\":{\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"tickUpper\":\"upper price tick for position\"}},\"increaseSize(uint256,uint256)\":{\"details\":\"Call this only when the user wants to sell native ETH\",\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\",\"quantity\":\"The incremental quantity you want to add to the existing position\"}},\"onERC721Received(address,address,uint256,bytes)\":{\"details\":\"Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`.\"},\"poolToken0()\":{\"returns\":{\"_0\":\"The token contract address\"}},\"poolToken1()\":{\"returns\":{\"_0\":\"The token contract address\"}},\"returnPositionToUser(uint256)\":{\"details\":\"only for user issues\",\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"}},\"settleOrder(uint256)\":{\"details\":\"has to be called when the position is fully out of bounds\",\"params\":{\"positionId\":\"The position ID linking the open order to its Uniswap Liquidity Position NFT\"},\"returns\":{\"settlerFees0\":\"The amount of fees collected in token0 for the settler\",\"settlerFees1\":\"The amount of fees collected in token1 for the settler\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Close(uint256,address)\":{\"notice\":\"Emitted when a position is closed by a user\"},\"Open(uint256,address,bool,uint160,uint256)\":{\"notice\":\"Emitted when a new order is opened\"},\"Settled(bool,uint256,address,uint256,uint256)\":{\"notice\":\"Emitted when a position size is filled by a settler (=/= user)\"},\"SizeChanged(uint256,address,uint256)\":{\"notice\":\"Emitted when a position size is adjusted by a user\"}},\"kind\":\"user\",\"methods\":{\"closePositionOwner(uint256)\":{\"notice\":\"Closes a limit order position, has to be triggered by the owner of the position\"},\"createOrder(bool,uint160,uint256)\":{\"notice\":\"Opens a new limit order with ETH\"},\"decreaseSize(uint256,uint256)\":{\"notice\":\"Decreases an existing order's size\"},\"getActivityStatus(uint256)\":{\"notice\":\"Getter to fetch a given position's status\"},\"getOwner(uint256)\":{\"notice\":\"Getter to fetch a given position's owner\"},\"getPoolPrice()\":{\"notice\":\"Getter to fetch current pool price\"},\"getQuantity(uint256)\":{\"notice\":\"Getter to fetch a given position's size\"},\"getSide(uint256)\":{\"notice\":\"Getter to fetch a given position's side \"},\"getTickLower(uint256)\":{\"notice\":\"Getter to fetch a given position's lower tick \"},\"getTickUpper(uint256)\":{\"notice\":\"Getter to fetch a given position's upper tick \"},\"increaseSize(uint256,uint256)\":{\"notice\":\"Increases an existing order's size with native ETH\"},\"poolToken0()\":{\"notice\":\"The first of the two tokens of the underlying Uniswap V3 pool, sorted by address\"},\"poolToken1()\":{\"notice\":\"The second of the two tokens of the underlying Uniswap V3 pool, sorted by address\"},\"returnPositionToUser(uint256)\":{\"notice\":\"Returns the Uniswap NFT position to the position owner\"},\"settleOrder(uint256)\":{\"notice\":\"Closes a limit order position, has to be triggered by the owner of the position\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IUniV3TradingPair.sol\":\"IUniV3TradingPair\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":300},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0xf70bc25d981e4ec9673a995ad2995d5d493ea188d3d8f388bba9c227ce09fb82\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd970f51e3a77790c2f02b5b1759827c3b897c3d98c407b3631e8af32e3dc93c\",\"dweb:/ipfs/QmPF85Amgbqjk3SNZKsPCsqCw8JfwYEPMnnhvMJUyX58je\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x2d99a0deb6648c34fbc66d6ac4a2d64798d7a5321b45624f6736fadc63da1962\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2dcdce5ede1e5e650d174ec0b35be7d47b6a50f30bc895ef0d9e59fb75052e45\",\"dweb:/ipfs/QmQ2XFsDLTYqfEdw7pYzHiGtFRY11yQm4b6ynYgKqDxeB8\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol\":{\"keccak256\":\"0xe6bd1b1218338b6f9fe17776f48623b4ac3d8a40405f74a44bc23c00abe2ca13\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0c354c3f6e9c487759aa7869be4fba68e0b2efc777b514d289c4cbd3ff8f7e1a\",\"dweb:/ipfs/QmdF9LcSYVmiUCL7JxLEYmSLrjga6zJsujfi6sgEJD4M1z\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0xccb917776f826ac6b68bd5a15a5f711e3967848a52ba11e6104d9a4f593314a7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://430255ad2229ced6d880e61a67bdc6e48dbbaed8354a7c1fe918cd8b8714a886\",\"dweb:/ipfs/QmTHY56odzqEpEC6v6tafaWMYY7vmULw25q5XHJLCCAeox\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x52146049d6709c870e8ddcd988b5155cb6c5d640cfcd8978aee52bc1ba2ec4eb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada84513617b7c1b2f890b44503735abaec73a1acd030112a17aac7e6c66a4a1\",\"dweb:/ipfs/QmaiFwdio67iJrfjAdkMac24eJ5sS1qD7CZW6PhUU6KjiK\"]},\"@openzeppelin/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0x8bbbc2f5c10065ee272592ae0a7a6ceb23de2fbd81564ee0bb015ecf404d5f61\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b95e56c1640d0ef789fc5c16269e141e992f6c8ac97cc6d377bd3825e9cab182\",\"dweb:/ipfs/QmVzaxJZY51EhagrcNnkxoU6Uq17RhATe7aHvtkC6wUkgK\"]},\"@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol\":{\"keccak256\":\"0xfe6113d518466cd6652c85b111e01f33eb62157f49ae5ed7d5a3947a2044adb1\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://1c42b9e6f5902ac38dd43e25750939baa7e0c1425dc75afd717c4412731065d5\",\"dweb:/ipfs/QmWaoacnzsucTvBME2o7YgZBZMhaHv7fkj83htHMVWJKWh\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol\":{\"keccak256\":\"0x9453dd0e7442188667d01d9b65de3f1e14e9511ff3e303179a15f6fc267f7634\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://982f4328f956c3e60e67501e759eb292ac487f76460c774c50e9ae4fcc92aae5\",\"dweb:/ipfs/QmRnzEDsaqtd9PJEVcgQi7p5aV5pMSvRUoGZJAdwFUJxgZ\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol\":{\"keccak256\":\"0xe603ac5b17ecdee73ba2b27efdf386c257a19c14206e87eee77e2017b742d9e5\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://8febc9bdb399a4d94bb89f5377732652e2400e4a8dee808201ade6848f9004e7\",\"dweb:/ipfs/QmaKDqYYFU4d2W2iN77aDHptfbFmYZRrMYXHeGpJmM8C1c\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol\":{\"keccak256\":\"0x8071514d0fe5d17d6fbd31c191cdfb703031c24e0ece3621d88ab10e871375cd\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://d0b571930cc7488b1d546a7e9cea7c52d8b3c4e207da657ed0e0db7343b8cd03\",\"dweb:/ipfs/QmaGK6vVwB95QSTR1XMYvrh7ivYAYZxi3fD7v6VMA4jZ39\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol\":{\"keccak256\":\"0xf6e5d2cd1139c4c276bdbc8e1d2b256e456c866a91f1b868da265c6d2685c3f7\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://b99c8c9ae8e27ee6559e5866bea82cbc9ffc8247f8d15b7422a4deb287d4d047\",\"dweb:/ipfs/QmfL8gaqt3ffAnm6nVj5ksuNpLygXuL3xq5VBqrkwC2JJ3\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol\":{\"keccak256\":\"0x759b78a2918af9e99e246dc3af084f654e48ef32bb4e4cb8a966aa3dcaece235\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://64144fb96e1c7fdba87305acadb98a198d26a3d46c097cb3a666e567f6f29735\",\"dweb:/ipfs/QmUnWVwN9FKB9uV5Pr8YfLpWZnYM2DENnRMaadZ492JS9u\"]},\"@uniswap/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol\":{\"keccak256\":\"0x852dc1f5df7dcf7f11e7bb3eed79f0cea72ad4b25f6a9d2c35aafb48925fd49f\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://ed63907c38ff36b0e22bc9ffc53e791ea74f0d4f0e7c257fdfb5aaf8825b1f0f\",\"dweb:/ipfs/QmSQrckghEjs6HVsA5GVgpNpZWvTXMY5eQLF7cN6deFeEg\"]},\"@uniswap/v3-periphery/contracts/interfaces/IERC721Permit.sol\":{\"keccak256\":\"0x9e3c2a4ee65ddf95b2dfcb0815784eea3a295707e6f8b83e4c4f0f8fe2e3a1d4\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://bfd939085b3618101b955f87c7fabf38338ba1aad480295acb8102ebc5d72471\",\"dweb:/ipfs/QmauQD8bGDHTztmTDfaKXjzM7Wacrq2XU7VcTbwn1WrDBL\"]},\"@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol\":{\"keccak256\":\"0xe1dadc73e60bf05d0b4e0f05bd2847c5783e833cc10352c14763360b13495ee1\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://6e3b10f75c101de044c1253672207399c1513fd1f0f17be31069c18c0b9a1460\",\"dweb:/ipfs/QmXrkXNY6njQfepE7KbRtJMruGXfrZwsMMsW7m5e3XS9Hf\"]},\"@uniswap/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol\":{\"keccak256\":\"0x7affcfeb5127c0925a71d6a65345e117c33537523aeca7bc98085ead8452519d\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://e16b291294210e71cb0f20cd0afe62ae2dc6878d627f5ccc19c4dc9cd80aec3f\",\"dweb:/ipfs/QmQGitSyBr26nour81BZmpmDMyJpvZRqHQZvnCD1Acb127\"]},\"@uniswap/v3-periphery/contracts/interfaces/IPeripheryPayments.sol\":{\"keccak256\":\"0xb547e10f1e69bed03621a62b73a503e260643066c6b4054867a4d1fef47eb274\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://f9a90f58f5fd5fb42f7811f4094113b532f307b14a73764c91f977590747f407\",\"dweb:/ipfs/QmSeNH2mfiDMKf3Q6V2sqtNxx1s72JNuA1VVxRM9HoMqYp\"]},\"@uniswap/v3-periphery/contracts/interfaces/IPoolInitializer.sol\":{\"keccak256\":\"0x9d7695e8d94c22cc5fcced602017aabb988de89981ea7bee29ea629d5328a862\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://61b50933026ee1017db2a6273af8cedc3238c95dca58880db0918dbdbb2f064f\",\"dweb:/ipfs/QmUebR26pqG25d18aBELKz8aFFKkmHa8PxntzXTA7o9Ldu\"]},\"@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol\":{\"keccak256\":\"0x5edd84eb8ba7c12fd8cb6cffe52e1e9f3f6464514ee5f539c2283826209035a2\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://f375d0e6d5ea3674e1aa6f112b021e9a86721a6a2f3cb22d673378b30cf0e840\",\"dweb:/ipfs/QmWJir2qnJyp963mU6U3jEEx9i3H3V5BgKawAfSnG1pC8w\"]},\"project:/contracts/interfaces/IUniV3TradingPair.sol\":{\"keccak256\":\"0xe3936999029698620209aaa4bfecf4b2bc29a9a5bc5bc65ee742a001be2d6f49\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e2951a54af8cd0df45e38ed1d95295d21f0d3e1cd9900b2374962e1600d942b8\",\"dweb:/ipfs/QmcjrRxGbrJmiDED5CuGjZ1pLt7BgFiD9CTDjtEF3xqvwG\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity 0.7.6;\r\npragma abicoder v2; \r\n\r\nimport \"@openzeppelin/contracts/utils/ReentrancyGuard.sol\";\r\nimport \"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\";\r\nimport \"@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol\";\r\nimport \"@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol\";\r\n\r\ninterface IUniV3TradingPair is \r\n    IERC721Receiver\r\n{\r\n\r\n    /// @notice Emitted when a new order is opened\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @param trader The address of the wallet that opened the position\r\n    /// @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\r\n    /// @param sqrtPriceX96 The price of the order in the UniV3 format\r\n    /// @param quantity Position size in token value\r\n    event Open(uint256 positionId, address indexed trader, bool side, uint160 sqrtPriceX96, uint256 quantity);\r\n    \r\n    /// @notice Emitted when a position is closed by a user\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @param trader The address of the wallet that owns the position\r\n    event Close(uint256 positionId, address indexed trader);\r\n\r\n    /// @notice Emitted when a position size is adjusted by a user\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @param trader The address of the wallet that owns the position\r\n    /// @param newQuantity Updated position quantity in token value\r\n    event SizeChanged(uint256 positionId, address indexed trader, uint256 newQuantity);\r\n    \r\n    /// @notice Emitted when a position size is filled by a settler (=/= user)\r\n    /// @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @param trader The address of the wallet that owns the position\r\n    /// @param executionPrice The final execution price of the order (the average between the lower and upper boundary of the UniV3 LP)\r\n    /// @param quantity Updated position quantity in token value\r\n    event Settled(bool side, uint256 positionId, address indexed trader, uint256 executionPrice, uint256 quantity);\r\n    \r\n    /// @notice Opens a new limit order with ETH\r\n    /// @dev This function handles native ETH and token payments\r\n    /// @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\r\n    /// @param sqrtPriceX96 The price of the order in the UniV3 format\r\n    /// @param quantity Position size in token value\r\n    /// @return positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    function createOrder(\r\n        bool side,\r\n        uint160 sqrtPriceX96, \r\n        uint256 quantity\r\n    )\r\n    external \r\n    payable  \r\n    returns (\r\n        uint256 positionId\r\n    );\r\n    \r\n    /// @notice Increases an existing order's size with native ETH\r\n    /// @dev Call this only when the user wants to sell native ETH\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @param quantity The incremental quantity you want to add to the existing position\r\n    function increaseSize(\r\n        uint256 positionId,\r\n        uint256 quantity\r\n    )\r\n    payable\r\n    external;\r\n\r\n    /// @notice Decreases an existing order's size\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @param quantity The quantity you want to remove from the existing position\r\n    function decreaseSize(\r\n        uint256 positionId,\r\n        uint256 quantity\r\n    ) \r\n    external;\r\n\r\n\r\n    /// @notice Closes a limit order position, has to be triggered by the owner of the position\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    function closePositionOwner(uint256 positionId) external;\r\n\r\n    /// @notice Closes a limit order position, has to be triggered by the owner of the position\r\n    /// @dev has to be called when the position is fully out of bounds\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return settlerFees0 The amount of fees collected in token0 for the settler\r\n    /// @return settlerFees1 The amount of fees collected in token1 for the settler\r\n    function settleOrder(uint256 positionId) external returns (uint256 settlerFees0, uint256 settlerFees1);\r\n    \r\n    /// @notice Returns the Uniswap NFT position to the position owner\r\n    /// @dev only for user issues\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    function returnPositionToUser(uint256 positionId) external;\r\n\r\n    /// @notice Getter to fetch current pool price\r\n    /// @return price current pool price as sqrtPriceX96\r\n    function getPoolPrice() external view returns (uint160 price);\r\n    \r\n    /// @notice Getter to fetch a given position's side \r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\r\n    function getSide(uint256 positionId) external view returns (bool side);\r\n\r\n    /// @notice Getter to fetch a given position's lower tick \r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return tickLower lower price tick for position\r\n    function getTickLower(uint256 positionId) external view returns (int24 tickLower);\r\n\r\n    /// @notice Getter to fetch a given position's upper tick \r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return tickUpper upper price tick for position\r\n    function getTickUpper(uint256 positionId) external view returns (int24 tickUpper);\r\n\r\n    /// @notice Getter to fetch a given position's size\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return quantity Position size in token value\r\n    function getQuantity(uint256 positionId) external view returns (uint256 quantity);\r\n\r\n    /// @notice Getter to fetch a given position's owner\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return _owner Position owner's address\r\n    function getOwner(uint256 positionId) external view returns (address _owner);\r\n\r\n    /// @notice Getter to fetch a given position's status\r\n    /// @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\r\n    /// @return active Position status (true: open, false: closed/filled)\r\n    function getActivityStatus(uint256 positionId) external view returns (bool active);\r\n\r\n    /// @notice The first of the two tokens of the underlying Uniswap V3 pool, sorted by address\r\n    /// @return The token contract address\r\n    function poolToken0() external view returns (address);\r\n\r\n    /// @notice The second of the two tokens of the underlying Uniswap V3 pool, sorted by address\r\n    /// @return The token contract address\r\n    function poolToken1() external view returns (address);\r\n\r\n    receive() external payable;\r\n\r\n    fallback() external payable;\r\n}",
+  "sourcePath": "C:\\Users\\LeoDu\\source\\repos\\unilimit\\contracts\\interfaces\\IUniV3TradingPair.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IUniV3TradingPair.sol",
+    "exportedSymbols": {
+      "IERC165": [
+        68
+      ],
+      "IERC721": [
+        1774
+      ],
+      "IERC721Enumerable": [
+        1805
+      ],
+      "IERC721Metadata": [
+        1832
+      ],
+      "IERC721Permit": [
+        4626
+      ],
+      "IERC721Receiver": [
+        1850
+      ],
+      "INonfungiblePositionManager": [
+        4821
+      ],
+      "IPeripheryImmutableState": [
+        4837
+      ],
+      "IPeripheryPayments": [
+        4863
+      ],
+      "IPoolInitializer": [
+        4882
+      ],
+      "IUniV3TradingPair": [
+        7748
+      ],
+      "IUniswapV3Pool": [
+        3453
+      ],
+      "IUniswapV3PoolActions": [
+        3549
+      ],
+      "IUniswapV3PoolDerivedState": [
+        3580
+      ],
+      "IUniswapV3PoolEvents": [
+        3699
+      ],
+      "IUniswapV3PoolImmutables": [
+        3739
+      ],
+      "IUniswapV3PoolOwnerActions": [
+        3765
+      ],
+      "IUniswapV3PoolState": [
+        3873
+      ],
+      "PoolAddress": [
+        5331
+      ],
+      "ReentrancyGuard": [
+        3261
+      ]
+    },
+    "id": 7749,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7576,
+        "literals": [
+          "solidity",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:22:38"
+      },
+      {
+        "id": 7577,
+        "literals": [
+          "abicoder",
+          "v2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "57:19:38"
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "file": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+        "id": 7578,
+        "nodeType": "ImportDirective",
+        "scope": 7749,
+        "sourceUnit": 3262,
+        "src": "81:59:38",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "file": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+        "id": 7579,
+        "nodeType": "ImportDirective",
+        "scope": 7749,
+        "sourceUnit": 1851,
+        "src": "142:66:38",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol",
+        "file": "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol",
+        "id": 7580,
+        "nodeType": "ImportDirective",
+        "scope": 7749,
+        "sourceUnit": 4822,
+        "src": "210:84:38",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+        "file": "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+        "id": 7581,
+        "nodeType": "ImportDirective",
+        "scope": 7749,
+        "sourceUnit": 3454,
+        "src": "296:66:38",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 7582,
+              "name": "IERC721Receiver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1850,
+              "src": "403:15:38",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IERC721Receiver_$1850",
+                "typeString": "contract IERC721Receiver"
+              }
+            },
+            "id": 7583,
+            "nodeType": "InheritanceSpecifier",
+            "src": "403:15:38"
+          }
+        ],
+        "contractDependencies": [
+          1850
+        ],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 7748,
+        "linearizedBaseContracts": [
+          7748,
+          1850
+        ],
+        "name": "IUniV3TradingPair",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 7584,
+              "nodeType": "StructuredDocumentation",
+              "src": "429:454:38",
+              "text": "@notice Emitted when a new order is opened\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that opened the position\n @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\n @param sqrtPriceX96 The price of the order in the UniV3 format\n @param quantity Position size in token value"
+            },
+            "id": 7596,
+            "name": "Open",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7595,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7586,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7596,
+                  "src": "900:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7585,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "900:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7588,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "trader",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7596,
+                  "src": "920:22:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7587,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "920:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7590,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "side",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7596,
+                  "src": "944:9:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7589,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "944:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7592,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7596,
+                  "src": "955:20:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 7591,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "955:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7594,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7596,
+                  "src": "977:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7593,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "977:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "899:95:38"
+            },
+            "src": "889:106:38"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 7597,
+              "nodeType": "StructuredDocumentation",
+              "src": "1007:231:38",
+              "text": "@notice Emitted when a position is closed by a user\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that owns the position"
+            },
+            "id": 7603,
+            "name": "Close",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7599,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7603,
+                  "src": "1256:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7598,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1256:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7601,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "trader",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7603,
+                  "src": "1276:22:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7600,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1276:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1255:44:38"
+            },
+            "src": "1244:56:38"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 7604,
+              "nodeType": "StructuredDocumentation",
+              "src": "1308:307:38",
+              "text": "@notice Emitted when a position size is adjusted by a user\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that owns the position\n @param newQuantity Updated position quantity in token value"
+            },
+            "id": 7612,
+            "name": "SizeChanged",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7611,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7606,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7612,
+                  "src": "1639:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7605,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1639:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7608,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "trader",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7612,
+                  "src": "1659:22:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7607,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1659:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7610,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newQuantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7612,
+                  "src": "1683:19:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7609,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1683:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1638:65:38"
+            },
+            "src": "1621:83:38"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 7613,
+              "nodeType": "StructuredDocumentation",
+              "src": "1716:557:38",
+              "text": "@notice Emitted when a position size is filled by a settler (=/= user)\n @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that owns the position\n @param executionPrice The final execution price of the order (the average between the lower and upper boundary of the UniV3 LP)\n @param quantity Updated position quantity in token value"
+            },
+            "id": 7625,
+            "name": "Settled",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 7624,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7615,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "side",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7625,
+                  "src": "2293:9:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7614,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2293:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7617,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7625,
+                  "src": "2304:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7616,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2304:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7619,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "trader",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7625,
+                  "src": "2324:22:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7618,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2324:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7621,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "executionPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7625,
+                  "src": "2348:22:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7620,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2348:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7623,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7625,
+                  "src": "2372:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7622,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2372:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2292:97:38"
+            },
+            "src": "2279:111:38"
+          },
+          {
+            "documentation": {
+              "id": 7626,
+              "nodeType": "StructuredDocumentation",
+              "src": "2402:445:38",
+              "text": "@notice Opens a new limit order with ETH\n @dev This function handles native ETH and token payments\n @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\n @param sqrtPriceX96 The price of the order in the UniV3 format\n @param quantity Position size in token value\n @return positionId The position ID linking the open order to its Uniswap Liquidity Position NFT"
+            },
+            "functionSelector": "623efcbe",
+            "id": 7637,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createOrder",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7633,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7628,
+                  "mutability": "mutable",
+                  "name": "side",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7637,
+                  "src": "2884:9:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7627,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2884:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7630,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7637,
+                  "src": "2904:20:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 7629,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2904:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7632,
+                  "mutability": "mutable",
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7637,
+                  "src": "2936:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7631,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2936:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2873:86:38"
+            },
+            "returnParameters": {
+              "id": 7636,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7635,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7637,
+                  "src": "3014:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7634,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3014:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3003:36:38"
+            },
+            "scope": 7748,
+            "src": "2853:187:38",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7638,
+              "nodeType": "StructuredDocumentation",
+              "src": "3052:325:38",
+              "text": "@notice Increases an existing order's size with native ETH\n @dev Call this only when the user wants to sell native ETH\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param quantity The incremental quantity you want to add to the existing position"
+            },
+            "functionSelector": "04f8fe9b",
+            "id": 7645,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "increaseSize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7643,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7640,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7645,
+                  "src": "3415:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7639,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3415:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7642,
+                  "mutability": "mutable",
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7645,
+                  "src": "3444:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7641,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3444:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3404:63:38"
+            },
+            "returnParameters": {
+              "id": 7644,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3494:0:38"
+            },
+            "scope": 7748,
+            "src": "3383:112:38",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7646,
+              "nodeType": "StructuredDocumentation",
+              "src": "3503:234:38",
+              "text": "@notice Decreases an existing order's size\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param quantity The quantity you want to remove from the existing position"
+            },
+            "functionSelector": "9859f805",
+            "id": 7653,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "decreaseSize",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7651,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7648,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7653,
+                  "src": "3775:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7647,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3775:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7650,
+                  "mutability": "mutable",
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7653,
+                  "src": "3804:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7649,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3804:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3764:63:38"
+            },
+            "returnParameters": {
+              "id": 7652,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3842:0:38"
+            },
+            "scope": 7748,
+            "src": "3743:100:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7654,
+              "nodeType": "StructuredDocumentation",
+              "src": "3853:195:38",
+              "text": "@notice Closes a limit order position, has to be triggered by the owner of the position\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT"
+            },
+            "functionSelector": "09651827",
+            "id": 7659,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "closePositionOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7657,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7656,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7659,
+                  "src": "4082:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7655,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4082:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4081:20:38"
+            },
+            "returnParameters": {
+              "id": 7658,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4110:0:38"
+            },
+            "scope": 7748,
+            "src": "4054:57:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7660,
+              "nodeType": "StructuredDocumentation",
+              "src": "4119:437:38",
+              "text": "@notice Closes a limit order position, has to be triggered by the owner of the position\n @dev has to be called when the position is fully out of bounds\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return settlerFees0 The amount of fees collected in token0 for the settler\n @return settlerFees1 The amount of fees collected in token1 for the settler"
+            },
+            "functionSelector": "b50e801d",
+            "id": 7669,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "settleOrder",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7663,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7662,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7669,
+                  "src": "4583:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7661,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4583:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4582:20:38"
+            },
+            "returnParameters": {
+              "id": 7668,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7665,
+                  "mutability": "mutable",
+                  "name": "settlerFees0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7669,
+                  "src": "4621:20:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7664,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4621:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 7667,
+                  "mutability": "mutable",
+                  "name": "settlerFees1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7669,
+                  "src": "4643:20:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7666,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4643:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4620:44:38"
+            },
+            "scope": 7748,
+            "src": "4562:103:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7670,
+              "nodeType": "StructuredDocumentation",
+              "src": "4677:205:38",
+              "text": "@notice Returns the Uniswap NFT position to the position owner\n @dev only for user issues\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT"
+            },
+            "functionSelector": "d836e86c",
+            "id": 7675,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "returnPositionToUser",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7673,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7672,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7675,
+                  "src": "4918:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7671,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4918:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4917:20:38"
+            },
+            "returnParameters": {
+              "id": 7674,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4946:0:38"
+            },
+            "scope": 7748,
+            "src": "4888:59:38",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7676,
+              "nodeType": "StructuredDocumentation",
+              "src": "4955:104:38",
+              "text": "@notice Getter to fetch current pool price\n @return price current pool price as sqrtPriceX96"
+            },
+            "functionSelector": "885a08e0",
+            "id": 7681,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPoolPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7677,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "5086:2:38"
+            },
+            "returnParameters": {
+              "id": 7680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7679,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7681,
+                  "src": "5112:13:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 7678,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5112:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5111:15:38"
+            },
+            "scope": 7748,
+            "src": "5065:62:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7682,
+              "nodeType": "StructuredDocumentation",
+              "src": "5139:261:38",
+              "text": "@notice Getter to fetch a given position's side \n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0"
+            },
+            "functionSelector": "f9a1f17f",
+            "id": 7689,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSide",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7685,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7684,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7689,
+                  "src": "5423:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7683,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5423:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5422:20:38"
+            },
+            "returnParameters": {
+              "id": 7688,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7687,
+                  "mutability": "mutable",
+                  "name": "side",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7689,
+                  "src": "5466:9:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7686,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5466:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5465:11:38"
+            },
+            "scope": 7748,
+            "src": "5406:71:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7690,
+              "nodeType": "StructuredDocumentation",
+              "src": "5485:219:38",
+              "text": "@notice Getter to fetch a given position's lower tick \n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return tickLower lower price tick for position"
+            },
+            "functionSelector": "9ce288cb",
+            "id": 7697,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTickLower",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7693,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7692,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7697,
+                  "src": "5732:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7691,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5732:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5731:20:38"
+            },
+            "returnParameters": {
+              "id": 7696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7695,
+                  "mutability": "mutable",
+                  "name": "tickLower",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7697,
+                  "src": "5775:15:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 7694,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5775:5:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5774:17:38"
+            },
+            "scope": 7748,
+            "src": "5710:82:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7698,
+              "nodeType": "StructuredDocumentation",
+              "src": "5800:219:38",
+              "text": "@notice Getter to fetch a given position's upper tick \n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return tickUpper upper price tick for position"
+            },
+            "functionSelector": "86991a1d",
+            "id": 7705,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTickUpper",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7701,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7700,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7705,
+                  "src": "6047:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7699,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6047:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6046:20:38"
+            },
+            "returnParameters": {
+              "id": 7704,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7703,
+                  "mutability": "mutable",
+                  "name": "tickUpper",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7705,
+                  "src": "6090:15:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 7702,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6090:5:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6089:17:38"
+            },
+            "scope": 7748,
+            "src": "6025:82:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7706,
+              "nodeType": "StructuredDocumentation",
+              "src": "6115:210:38",
+              "text": "@notice Getter to fetch a given position's size\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return quantity Position size in token value"
+            },
+            "functionSelector": "5ebd9ded",
+            "id": 7713,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getQuantity",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7709,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7708,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7713,
+                  "src": "6352:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7707,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6352:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6351:20:38"
+            },
+            "returnParameters": {
+              "id": 7712,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7711,
+                  "mutability": "mutable",
+                  "name": "quantity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7713,
+                  "src": "6395:16:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7710,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6395:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6394:18:38"
+            },
+            "scope": 7748,
+            "src": "6331:82:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7714,
+              "nodeType": "StructuredDocumentation",
+              "src": "6421:205:38",
+              "text": "@notice Getter to fetch a given position's owner\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return _owner Position owner's address"
+            },
+            "functionSelector": "c41a360a",
+            "id": 7721,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getOwner",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7717,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7716,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7721,
+                  "src": "6650:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7715,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6650:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6649:20:38"
+            },
+            "returnParameters": {
+              "id": 7720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7719,
+                  "mutability": "mutable",
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7721,
+                  "src": "6693:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7718,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6693:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6692:16:38"
+            },
+            "scope": 7748,
+            "src": "6632:77:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7722,
+              "nodeType": "StructuredDocumentation",
+              "src": "6717:232:38",
+              "text": "@notice Getter to fetch a given position's status\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return active Position status (true: open, false: closed/filled)"
+            },
+            "functionSelector": "5cc1a5d0",
+            "id": 7729,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getActivityStatus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7725,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7724,
+                  "mutability": "mutable",
+                  "name": "positionId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "6982:18:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 7723,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6982:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6981:20:38"
+            },
+            "returnParameters": {
+              "id": 7728,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7727,
+                  "mutability": "mutable",
+                  "name": "active",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7729,
+                  "src": "7025:11:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 7726,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7025:4:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7024:13:38"
+            },
+            "scope": 7748,
+            "src": "6955:83:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7730,
+              "nodeType": "StructuredDocumentation",
+              "src": "7046:136:38",
+              "text": "@notice The first of the two tokens of the underlying Uniswap V3 pool, sorted by address\n @return The token contract address"
+            },
+            "functionSelector": "a73bf6df",
+            "id": 7735,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "poolToken0",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7731,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7207:2:38"
+            },
+            "returnParameters": {
+              "id": 7734,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7733,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7735,
+                  "src": "7233:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7732,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7233:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7232:9:38"
+            },
+            "scope": 7748,
+            "src": "7188:54:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 7736,
+              "nodeType": "StructuredDocumentation",
+              "src": "7250:137:38",
+              "text": "@notice The second of the two tokens of the underlying Uniswap V3 pool, sorted by address\n @return The token contract address"
+            },
+            "functionSelector": "4758af8a",
+            "id": 7741,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "poolToken1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7737,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7412:2:38"
+            },
+            "returnParameters": {
+              "id": 7740,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 7739,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 7741,
+                  "src": "7438:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 7738,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7438:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7437:9:38"
+            },
+            "scope": 7748,
+            "src": "7393:54:38",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7744,
+            "implemented": false,
+            "kind": "receive",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7742,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7462:2:38"
+            },
+            "returnParameters": {
+              "id": 7743,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7481:0:38"
+            },
+            "scope": 7748,
+            "src": "7455:27:38",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 7747,
+            "implemented": false,
+            "kind": "fallback",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 7745,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7498:2:38"
+            },
+            "returnParameters": {
+              "id": 7746,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7517:0:38"
+            },
+            "scope": 7748,
+            "src": "7490:28:38",
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 7749,
+        "src": "366:7155:38"
+      }
+    ],
+    "src": "33:7488:38"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/interfaces/IUniV3TradingPair.sol",
+      "exportedSymbols": {
+        "IERC165": [
+          68
+        ],
+        "IERC721": [
+          1774
+        ],
+        "IERC721Enumerable": [
+          1805
+        ],
+        "IERC721Metadata": [
+          1832
+        ],
+        "IERC721Permit": [
+          4626
+        ],
+        "IERC721Receiver": [
+          1850
+        ],
+        "INonfungiblePositionManager": [
+          4821
+        ],
+        "IPeripheryImmutableState": [
+          4837
+        ],
+        "IPeripheryPayments": [
+          4863
+        ],
+        "IPoolInitializer": [
+          4882
+        ],
+        "IUniV3TradingPair": [
+          7748
+        ],
+        "IUniswapV3Pool": [
+          3453
+        ],
+        "IUniswapV3PoolActions": [
+          3549
+        ],
+        "IUniswapV3PoolDerivedState": [
+          3580
+        ],
+        "IUniswapV3PoolEvents": [
+          3699
+        ],
+        "IUniswapV3PoolImmutables": [
+          3739
+        ],
+        "IUniswapV3PoolOwnerActions": [
+          3765
+        ],
+        "IUniswapV3PoolState": [
+          3873
+        ],
+        "PoolAddress": [
+          5331
+        ],
+        "ReentrancyGuard": [
+          3261
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 7576,
+        "name": "PragmaDirective",
+        "src": "33:22:38"
+      },
+      {
+        "attributes": {
+          "literals": [
+            "abicoder",
+            "v2"
+          ]
+        },
+        "id": 7577,
+        "name": "PragmaDirective",
+        "src": "57:19:38"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 3262,
+          "absolutePath": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+          "file": "@openzeppelin/contracts/utils/ReentrancyGuard.sol",
+          "scope": 7749,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7578,
+        "name": "ImportDirective",
+        "src": "81:59:38"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1851,
+          "absolutePath": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+          "file": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
+          "scope": 7749,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7579,
+        "name": "ImportDirective",
+        "src": "142:66:38"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4822,
+          "absolutePath": "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol",
+          "file": "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol",
+          "scope": 7749,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7580,
+        "name": "ImportDirective",
+        "src": "210:84:38"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 3454,
+          "absolutePath": "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+          "file": "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+          "scope": 7749,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 7581,
+        "name": "ImportDirective",
+        "src": "296:66:38"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            1850
+          ],
+          "contractKind": "interface",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            7748,
+            1850
+          ],
+          "name": "IUniV3TradingPair",
+          "scope": 7749
+        },
+        "children": [
+          {
+            "attributes": {},
+            "children": [
+              {
+                "attributes": {
+                  "name": "IERC721Receiver",
+                  "referencedDeclaration": 1850,
+                  "type": "contract IERC721Receiver"
+                },
+                "id": 7582,
+                "name": "UserDefinedTypeName",
+                "src": "403:15:38"
+              }
+            ],
+            "id": 7583,
+            "name": "InheritanceSpecifier",
+            "src": "403:15:38"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "Open"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Emitted when a new order is opened\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that opened the position\n @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\n @param sqrtPriceX96 The price of the order in the UniV3 format\n @param quantity Position size in token value"
+                },
+                "id": 7584,
+                "name": "StructuredDocumentation",
+                "src": "429:454:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7596,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7585,
+                        "name": "ElementaryTypeName",
+                        "src": "900:7:38"
+                      }
+                    ],
+                    "id": 7586,
+                    "name": "VariableDeclaration",
+                    "src": "900:18:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "trader",
+                      "scope": 7596,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7587,
+                        "name": "ElementaryTypeName",
+                        "src": "920:7:38"
+                      }
+                    ],
+                    "id": 7588,
+                    "name": "VariableDeclaration",
+                    "src": "920:22:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "side",
+                      "scope": 7596,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7589,
+                        "name": "ElementaryTypeName",
+                        "src": "944:4:38"
+                      }
+                    ],
+                    "id": 7590,
+                    "name": "VariableDeclaration",
+                    "src": "944:9:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceX96",
+                      "scope": 7596,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 7591,
+                        "name": "ElementaryTypeName",
+                        "src": "955:7:38"
+                      }
+                    ],
+                    "id": 7592,
+                    "name": "VariableDeclaration",
+                    "src": "955:20:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "quantity",
+                      "scope": 7596,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7593,
+                        "name": "ElementaryTypeName",
+                        "src": "977:7:38"
+                      }
+                    ],
+                    "id": 7594,
+                    "name": "VariableDeclaration",
+                    "src": "977:16:38"
+                  }
+                ],
+                "id": 7595,
+                "name": "ParameterList",
+                "src": "899:95:38"
+              }
+            ],
+            "id": 7596,
+            "name": "EventDefinition",
+            "src": "889:106:38"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "Close"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Emitted when a position is closed by a user\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that owns the position"
+                },
+                "id": 7597,
+                "name": "StructuredDocumentation",
+                "src": "1007:231:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7603,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7598,
+                        "name": "ElementaryTypeName",
+                        "src": "1256:7:38"
+                      }
+                    ],
+                    "id": 7599,
+                    "name": "VariableDeclaration",
+                    "src": "1256:18:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "trader",
+                      "scope": 7603,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7600,
+                        "name": "ElementaryTypeName",
+                        "src": "1276:7:38"
+                      }
+                    ],
+                    "id": 7601,
+                    "name": "VariableDeclaration",
+                    "src": "1276:22:38"
+                  }
+                ],
+                "id": 7602,
+                "name": "ParameterList",
+                "src": "1255:44:38"
+              }
+            ],
+            "id": 7603,
+            "name": "EventDefinition",
+            "src": "1244:56:38"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "SizeChanged"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Emitted when a position size is adjusted by a user\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that owns the position\n @param newQuantity Updated position quantity in token value"
+                },
+                "id": 7604,
+                "name": "StructuredDocumentation",
+                "src": "1308:307:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7612,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7605,
+                        "name": "ElementaryTypeName",
+                        "src": "1639:7:38"
+                      }
+                    ],
+                    "id": 7606,
+                    "name": "VariableDeclaration",
+                    "src": "1639:18:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "trader",
+                      "scope": 7612,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7607,
+                        "name": "ElementaryTypeName",
+                        "src": "1659:7:38"
+                      }
+                    ],
+                    "id": 7608,
+                    "name": "VariableDeclaration",
+                    "src": "1659:22:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "newQuantity",
+                      "scope": 7612,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7609,
+                        "name": "ElementaryTypeName",
+                        "src": "1683:7:38"
+                      }
+                    ],
+                    "id": 7610,
+                    "name": "VariableDeclaration",
+                    "src": "1683:19:38"
+                  }
+                ],
+                "id": 7611,
+                "name": "ParameterList",
+                "src": "1638:65:38"
+              }
+            ],
+            "id": 7612,
+            "name": "EventDefinition",
+            "src": "1621:83:38"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "Settled"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Emitted when a position size is filled by a settler (=/= user)\n @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param trader The address of the wallet that owns the position\n @param executionPrice The final execution price of the order (the average between the lower and upper boundary of the UniV3 LP)\n @param quantity Updated position quantity in token value"
+                },
+                "id": 7613,
+                "name": "StructuredDocumentation",
+                "src": "1716:557:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "side",
+                      "scope": 7625,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7614,
+                        "name": "ElementaryTypeName",
+                        "src": "2293:4:38"
+                      }
+                    ],
+                    "id": 7615,
+                    "name": "VariableDeclaration",
+                    "src": "2293:9:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7625,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7616,
+                        "name": "ElementaryTypeName",
+                        "src": "2304:7:38"
+                      }
+                    ],
+                    "id": 7617,
+                    "name": "VariableDeclaration",
+                    "src": "2304:18:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "trader",
+                      "scope": 7625,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7618,
+                        "name": "ElementaryTypeName",
+                        "src": "2324:7:38"
+                      }
+                    ],
+                    "id": 7619,
+                    "name": "VariableDeclaration",
+                    "src": "2324:22:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "executionPrice",
+                      "scope": 7625,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7620,
+                        "name": "ElementaryTypeName",
+                        "src": "2348:7:38"
+                      }
+                    ],
+                    "id": 7621,
+                    "name": "VariableDeclaration",
+                    "src": "2348:22:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "quantity",
+                      "scope": 7625,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7622,
+                        "name": "ElementaryTypeName",
+                        "src": "2372:7:38"
+                      }
+                    ],
+                    "id": 7623,
+                    "name": "VariableDeclaration",
+                    "src": "2372:16:38"
+                  }
+                ],
+                "id": 7624,
+                "name": "ParameterList",
+                "src": "2292:97:38"
+              }
+            ],
+            "id": 7625,
+            "name": "EventDefinition",
+            "src": "2279:111:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "623efcbe",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "createOrder",
+              "scope": 7748,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Opens a new limit order with ETH\n @dev This function handles native ETH and token payments\n @param side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0\n @param sqrtPriceX96 The price of the order in the UniV3 format\n @param quantity Position size in token value\n @return positionId The position ID linking the open order to its Uniswap Liquidity Position NFT"
+                },
+                "id": 7626,
+                "name": "StructuredDocumentation",
+                "src": "2402:445:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "side",
+                      "scope": 7637,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7627,
+                        "name": "ElementaryTypeName",
+                        "src": "2884:4:38"
+                      }
+                    ],
+                    "id": 7628,
+                    "name": "VariableDeclaration",
+                    "src": "2884:9:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceX96",
+                      "scope": 7637,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 7629,
+                        "name": "ElementaryTypeName",
+                        "src": "2904:7:38"
+                      }
+                    ],
+                    "id": 7630,
+                    "name": "VariableDeclaration",
+                    "src": "2904:20:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "quantity",
+                      "scope": 7637,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7631,
+                        "name": "ElementaryTypeName",
+                        "src": "2936:7:38"
+                      }
+                    ],
+                    "id": 7632,
+                    "name": "VariableDeclaration",
+                    "src": "2936:16:38"
+                  }
+                ],
+                "id": 7633,
+                "name": "ParameterList",
+                "src": "2873:86:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7637,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7634,
+                        "name": "ElementaryTypeName",
+                        "src": "3014:7:38"
+                      }
+                    ],
+                    "id": 7635,
+                    "name": "VariableDeclaration",
+                    "src": "3014:18:38"
+                  }
+                ],
+                "id": 7636,
+                "name": "ParameterList",
+                "src": "3003:36:38"
+              }
+            ],
+            "id": 7637,
+            "name": "FunctionDefinition",
+            "src": "2853:187:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "04f8fe9b",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "increaseSize",
+              "scope": 7748,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Increases an existing order's size with native ETH\n @dev Call this only when the user wants to sell native ETH\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param quantity The incremental quantity you want to add to the existing position"
+                },
+                "id": 7638,
+                "name": "StructuredDocumentation",
+                "src": "3052:325:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7645,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7639,
+                        "name": "ElementaryTypeName",
+                        "src": "3415:7:38"
+                      }
+                    ],
+                    "id": 7640,
+                    "name": "VariableDeclaration",
+                    "src": "3415:18:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "quantity",
+                      "scope": 7645,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7641,
+                        "name": "ElementaryTypeName",
+                        "src": "3444:7:38"
+                      }
+                    ],
+                    "id": 7642,
+                    "name": "VariableDeclaration",
+                    "src": "3444:16:38"
+                  }
+                ],
+                "id": 7643,
+                "name": "ParameterList",
+                "src": "3404:63:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7644,
+                "name": "ParameterList",
+                "src": "3494:0:38"
+              }
+            ],
+            "id": 7645,
+            "name": "FunctionDefinition",
+            "src": "3383:112:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "9859f805",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "decreaseSize",
+              "scope": 7748,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Decreases an existing order's size\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @param quantity The quantity you want to remove from the existing position"
+                },
+                "id": 7646,
+                "name": "StructuredDocumentation",
+                "src": "3503:234:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7653,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7647,
+                        "name": "ElementaryTypeName",
+                        "src": "3775:7:38"
+                      }
+                    ],
+                    "id": 7648,
+                    "name": "VariableDeclaration",
+                    "src": "3775:18:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "quantity",
+                      "scope": 7653,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7649,
+                        "name": "ElementaryTypeName",
+                        "src": "3804:7:38"
+                      }
+                    ],
+                    "id": 7650,
+                    "name": "VariableDeclaration",
+                    "src": "3804:16:38"
+                  }
+                ],
+                "id": 7651,
+                "name": "ParameterList",
+                "src": "3764:63:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7652,
+                "name": "ParameterList",
+                "src": "3842:0:38"
+              }
+            ],
+            "id": 7653,
+            "name": "FunctionDefinition",
+            "src": "3743:100:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "09651827",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "closePositionOwner",
+              "scope": 7748,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Closes a limit order position, has to be triggered by the owner of the position\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT"
+                },
+                "id": 7654,
+                "name": "StructuredDocumentation",
+                "src": "3853:195:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7659,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7655,
+                        "name": "ElementaryTypeName",
+                        "src": "4082:7:38"
+                      }
+                    ],
+                    "id": 7656,
+                    "name": "VariableDeclaration",
+                    "src": "4082:18:38"
+                  }
+                ],
+                "id": 7657,
+                "name": "ParameterList",
+                "src": "4081:20:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7658,
+                "name": "ParameterList",
+                "src": "4110:0:38"
+              }
+            ],
+            "id": 7659,
+            "name": "FunctionDefinition",
+            "src": "4054:57:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "b50e801d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "settleOrder",
+              "scope": 7748,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Closes a limit order position, has to be triggered by the owner of the position\n @dev has to be called when the position is fully out of bounds\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return settlerFees0 The amount of fees collected in token0 for the settler\n @return settlerFees1 The amount of fees collected in token1 for the settler"
+                },
+                "id": 7660,
+                "name": "StructuredDocumentation",
+                "src": "4119:437:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7669,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7661,
+                        "name": "ElementaryTypeName",
+                        "src": "4583:7:38"
+                      }
+                    ],
+                    "id": 7662,
+                    "name": "VariableDeclaration",
+                    "src": "4583:18:38"
+                  }
+                ],
+                "id": 7663,
+                "name": "ParameterList",
+                "src": "4582:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "settlerFees0",
+                      "scope": 7669,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7664,
+                        "name": "ElementaryTypeName",
+                        "src": "4621:7:38"
+                      }
+                    ],
+                    "id": 7665,
+                    "name": "VariableDeclaration",
+                    "src": "4621:20:38"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "settlerFees1",
+                      "scope": 7669,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7666,
+                        "name": "ElementaryTypeName",
+                        "src": "4643:7:38"
+                      }
+                    ],
+                    "id": 7667,
+                    "name": "VariableDeclaration",
+                    "src": "4643:20:38"
+                  }
+                ],
+                "id": 7668,
+                "name": "ParameterList",
+                "src": "4620:44:38"
+              }
+            ],
+            "id": 7669,
+            "name": "FunctionDefinition",
+            "src": "4562:103:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "d836e86c",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "returnPositionToUser",
+              "scope": 7748,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Returns the Uniswap NFT position to the position owner\n @dev only for user issues\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT"
+                },
+                "id": 7670,
+                "name": "StructuredDocumentation",
+                "src": "4677:205:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7675,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7671,
+                        "name": "ElementaryTypeName",
+                        "src": "4918:7:38"
+                      }
+                    ],
+                    "id": 7672,
+                    "name": "VariableDeclaration",
+                    "src": "4918:18:38"
+                  }
+                ],
+                "id": 7673,
+                "name": "ParameterList",
+                "src": "4917:20:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7674,
+                "name": "ParameterList",
+                "src": "4946:0:38"
+              }
+            ],
+            "id": 7675,
+            "name": "FunctionDefinition",
+            "src": "4888:59:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "885a08e0",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getPoolPrice",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch current pool price\n @return price current pool price as sqrtPriceX96"
+                },
+                "id": 7676,
+                "name": "StructuredDocumentation",
+                "src": "4955:104:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7677,
+                "name": "ParameterList",
+                "src": "5086:2:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "price",
+                      "scope": 7681,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 7678,
+                        "name": "ElementaryTypeName",
+                        "src": "5112:7:38"
+                      }
+                    ],
+                    "id": 7679,
+                    "name": "VariableDeclaration",
+                    "src": "5112:13:38"
+                  }
+                ],
+                "id": 7680,
+                "name": "ParameterList",
+                "src": "5111:15:38"
+              }
+            ],
+            "id": 7681,
+            "name": "FunctionDefinition",
+            "src": "5065:62:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "f9a1f17f",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getSide",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch a given position's side \n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return side Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0"
+                },
+                "id": 7682,
+                "name": "StructuredDocumentation",
+                "src": "5139:261:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7689,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7683,
+                        "name": "ElementaryTypeName",
+                        "src": "5423:7:38"
+                      }
+                    ],
+                    "id": 7684,
+                    "name": "VariableDeclaration",
+                    "src": "5423:18:38"
+                  }
+                ],
+                "id": 7685,
+                "name": "ParameterList",
+                "src": "5422:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "side",
+                      "scope": 7689,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7686,
+                        "name": "ElementaryTypeName",
+                        "src": "5466:4:38"
+                      }
+                    ],
+                    "id": 7687,
+                    "name": "VariableDeclaration",
+                    "src": "5466:9:38"
+                  }
+                ],
+                "id": 7688,
+                "name": "ParameterList",
+                "src": "5465:11:38"
+              }
+            ],
+            "id": 7689,
+            "name": "FunctionDefinition",
+            "src": "5406:71:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "9ce288cb",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getTickLower",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch a given position's lower tick \n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return tickLower lower price tick for position"
+                },
+                "id": 7690,
+                "name": "StructuredDocumentation",
+                "src": "5485:219:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7697,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7691,
+                        "name": "ElementaryTypeName",
+                        "src": "5732:7:38"
+                      }
+                    ],
+                    "id": 7692,
+                    "name": "VariableDeclaration",
+                    "src": "5732:18:38"
+                  }
+                ],
+                "id": 7693,
+                "name": "ParameterList",
+                "src": "5731:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickLower",
+                      "scope": 7697,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 7694,
+                        "name": "ElementaryTypeName",
+                        "src": "5775:5:38"
+                      }
+                    ],
+                    "id": 7695,
+                    "name": "VariableDeclaration",
+                    "src": "5775:15:38"
+                  }
+                ],
+                "id": 7696,
+                "name": "ParameterList",
+                "src": "5774:17:38"
+              }
+            ],
+            "id": 7697,
+            "name": "FunctionDefinition",
+            "src": "5710:82:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "86991a1d",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getTickUpper",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch a given position's upper tick \n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return tickUpper upper price tick for position"
+                },
+                "id": 7698,
+                "name": "StructuredDocumentation",
+                "src": "5800:219:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7705,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7699,
+                        "name": "ElementaryTypeName",
+                        "src": "6047:7:38"
+                      }
+                    ],
+                    "id": 7700,
+                    "name": "VariableDeclaration",
+                    "src": "6047:18:38"
+                  }
+                ],
+                "id": 7701,
+                "name": "ParameterList",
+                "src": "6046:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tickUpper",
+                      "scope": 7705,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 7702,
+                        "name": "ElementaryTypeName",
+                        "src": "6090:5:38"
+                      }
+                    ],
+                    "id": 7703,
+                    "name": "VariableDeclaration",
+                    "src": "6090:15:38"
+                  }
+                ],
+                "id": 7704,
+                "name": "ParameterList",
+                "src": "6089:17:38"
+              }
+            ],
+            "id": 7705,
+            "name": "FunctionDefinition",
+            "src": "6025:82:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "5ebd9ded",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getQuantity",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch a given position's size\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return quantity Position size in token value"
+                },
+                "id": 7706,
+                "name": "StructuredDocumentation",
+                "src": "6115:210:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7713,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7707,
+                        "name": "ElementaryTypeName",
+                        "src": "6352:7:38"
+                      }
+                    ],
+                    "id": 7708,
+                    "name": "VariableDeclaration",
+                    "src": "6352:18:38"
+                  }
+                ],
+                "id": 7709,
+                "name": "ParameterList",
+                "src": "6351:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "quantity",
+                      "scope": 7713,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7710,
+                        "name": "ElementaryTypeName",
+                        "src": "6395:7:38"
+                      }
+                    ],
+                    "id": 7711,
+                    "name": "VariableDeclaration",
+                    "src": "6395:16:38"
+                  }
+                ],
+                "id": 7712,
+                "name": "ParameterList",
+                "src": "6394:18:38"
+              }
+            ],
+            "id": 7713,
+            "name": "FunctionDefinition",
+            "src": "6331:82:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "c41a360a",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getOwner",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch a given position's owner\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return _owner Position owner's address"
+                },
+                "id": 7714,
+                "name": "StructuredDocumentation",
+                "src": "6421:205:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7721,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7715,
+                        "name": "ElementaryTypeName",
+                        "src": "6650:7:38"
+                      }
+                    ],
+                    "id": 7716,
+                    "name": "VariableDeclaration",
+                    "src": "6650:18:38"
+                  }
+                ],
+                "id": 7717,
+                "name": "ParameterList",
+                "src": "6649:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_owner",
+                      "scope": 7721,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7718,
+                        "name": "ElementaryTypeName",
+                        "src": "6693:7:38"
+                      }
+                    ],
+                    "id": 7719,
+                    "name": "VariableDeclaration",
+                    "src": "6693:14:38"
+                  }
+                ],
+                "id": 7720,
+                "name": "ParameterList",
+                "src": "6692:16:38"
+              }
+            ],
+            "id": 7721,
+            "name": "FunctionDefinition",
+            "src": "6632:77:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "5cc1a5d0",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getActivityStatus",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice Getter to fetch a given position's status\n @param positionId The position ID linking the open order to its Uniswap Liquidity Position NFT\n @return active Position status (true: open, false: closed/filled)"
+                },
+                "id": 7722,
+                "name": "StructuredDocumentation",
+                "src": "6717:232:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "positionId",
+                      "scope": 7729,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 7723,
+                        "name": "ElementaryTypeName",
+                        "src": "6982:7:38"
+                      }
+                    ],
+                    "id": 7724,
+                    "name": "VariableDeclaration",
+                    "src": "6982:18:38"
+                  }
+                ],
+                "id": 7725,
+                "name": "ParameterList",
+                "src": "6981:20:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "active",
+                      "scope": 7729,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bool",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bool",
+                          "type": "bool"
+                        },
+                        "id": 7726,
+                        "name": "ElementaryTypeName",
+                        "src": "7025:4:38"
+                      }
+                    ],
+                    "id": 7727,
+                    "name": "VariableDeclaration",
+                    "src": "7025:11:38"
+                  }
+                ],
+                "id": 7728,
+                "name": "ParameterList",
+                "src": "7024:13:38"
+              }
+            ],
+            "id": 7729,
+            "name": "FunctionDefinition",
+            "src": "6955:83:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "a73bf6df",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "poolToken0",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice The first of the two tokens of the underlying Uniswap V3 pool, sorted by address\n @return The token contract address"
+                },
+                "id": 7730,
+                "name": "StructuredDocumentation",
+                "src": "7046:136:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7731,
+                "name": "ParameterList",
+                "src": "7207:2:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 7735,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7732,
+                        "name": "ElementaryTypeName",
+                        "src": "7233:7:38"
+                      }
+                    ],
+                    "id": 7733,
+                    "name": "VariableDeclaration",
+                    "src": "7233:7:38"
+                  }
+                ],
+                "id": 7734,
+                "name": "ParameterList",
+                "src": "7232:9:38"
+              }
+            ],
+            "id": 7735,
+            "name": "FunctionDefinition",
+            "src": "7188:54:38"
+          },
+          {
+            "attributes": {
+              "functionSelector": "4758af8a",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "poolToken1",
+              "scope": 7748,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "text": "@notice The second of the two tokens of the underlying Uniswap V3 pool, sorted by address\n @return The token contract address"
+                },
+                "id": 7736,
+                "name": "StructuredDocumentation",
+                "src": "7250:137:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7737,
+                "name": "ParameterList",
+                "src": "7412:2:38"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 7741,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 7738,
+                        "name": "ElementaryTypeName",
+                        "src": "7438:7:38"
+                      }
+                    ],
+                    "id": 7739,
+                    "name": "VariableDeclaration",
+                    "src": "7438:7:38"
+                  }
+                ],
+                "id": 7740,
+                "name": "ParameterList",
+                "src": "7437:9:38"
+              }
+            ],
+            "id": 7741,
+            "name": "FunctionDefinition",
+            "src": "7393:54:38"
+          },
+          {
+            "attributes": {
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "receive",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 7748,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7742,
+                "name": "ParameterList",
+                "src": "7462:2:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7743,
+                "name": "ParameterList",
+                "src": "7481:0:38"
+              }
+            ],
+            "id": 7744,
+            "name": "FunctionDefinition",
+            "src": "7455:27:38"
+          },
+          {
+            "attributes": {
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "fallback",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 7748,
+              "stateMutability": "payable",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7745,
+                "name": "ParameterList",
+                "src": "7498:2:38"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 7746,
+                "name": "ParameterList",
+                "src": "7517:0:38"
+              }
+            ],
+            "id": 7747,
+            "name": "FunctionDefinition",
+            "src": "7490:28:38"
+          }
+        ],
+        "id": 7748,
+        "name": "ContractDefinition",
+        "src": "366:7155:38"
+      }
+    ],
+    "id": 7749,
+    "name": "SourceUnit",
+    "src": "33:7488:38"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.10",
+  "updatedAt": "2023-05-09T15:26:17.957Z",
+  "devdoc": {
+    "events": {
+      "Close(uint256,address)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT",
+          "trader": "The address of the wallet that owns the position"
+        }
+      },
+      "Open(uint256,address,bool,uint160,uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT",
+          "quantity": "Position size in token value",
+          "side": "Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0",
+          "sqrtPriceX96": "The price of the order in the UniV3 format",
+          "trader": "The address of the wallet that opened the position"
+        }
+      },
+      "Settled(bool,uint256,address,uint256,uint256)": {
+        "params": {
+          "executionPrice": "The final execution price of the order (the average between the lower and upper boundary of the UniV3 LP)",
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT",
+          "quantity": "Updated position quantity in token value",
+          "side": "Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0",
+          "trader": "The address of the wallet that owns the position"
+        }
+      },
+      "SizeChanged(uint256,address,uint256)": {
+        "params": {
+          "newQuantity": "Updated position quantity in token value",
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT",
+          "trader": "The address of the wallet that owns the position"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "closePositionOwner(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        }
+      },
+      "createOrder(bool,uint160,uint256)": {
+        "details": "This function handles native ETH and token payments",
+        "params": {
+          "quantity": "Position size in token value",
+          "side": "Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0",
+          "sqrtPriceX96": "The price of the order in the UniV3 format"
+        },
+        "returns": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        }
+      },
+      "decreaseSize(uint256,uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT",
+          "quantity": "The quantity you want to remove from the existing position"
+        }
+      },
+      "getActivityStatus(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "active": "Position status (true: open, false: closed/filled)"
+        }
+      },
+      "getOwner(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "_owner": "Position owner's address"
+        }
+      },
+      "getPoolPrice()": {
+        "returns": {
+          "price": "current pool price as sqrtPriceX96"
+        }
+      },
+      "getQuantity(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "quantity": "Position size in token value"
+        }
+      },
+      "getSide(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "side": "Buy/Sell switch. True: buying token0 with token1, False: buying token1 with token0"
+        }
+      },
+      "getTickLower(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "tickLower": "lower price tick for position"
+        }
+      },
+      "getTickUpper(uint256)": {
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "tickUpper": "upper price tick for position"
+        }
+      },
+      "increaseSize(uint256,uint256)": {
+        "details": "Call this only when the user wants to sell native ETH",
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT",
+          "quantity": "The incremental quantity you want to add to the existing position"
+        }
+      },
+      "onERC721Received(address,address,uint256,bytes)": {
+        "details": "Whenever an {IERC721} `tokenId` token is transferred to this contract via {IERC721-safeTransferFrom} by `operator` from `from`, this function is called. It must return its Solidity selector to confirm the token transfer. If any other value is returned or the interface is not implemented by the recipient, the transfer will be reverted. The selector can be obtained in Solidity with `IERC721.onERC721Received.selector`."
+      },
+      "poolToken0()": {
+        "returns": {
+          "_0": "The token contract address"
+        }
+      },
+      "poolToken1()": {
+        "returns": {
+          "_0": "The token contract address"
+        }
+      },
+      "returnPositionToUser(uint256)": {
+        "details": "only for user issues",
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        }
+      },
+      "settleOrder(uint256)": {
+        "details": "has to be called when the position is fully out of bounds",
+        "params": {
+          "positionId": "The position ID linking the open order to its Uniswap Liquidity Position NFT"
+        },
+        "returns": {
+          "settlerFees0": "The amount of fees collected in token0 for the settler",
+          "settlerFees1": "The amount of fees collected in token1 for the settler"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "Close(uint256,address)": {
+        "notice": "Emitted when a position is closed by a user"
+      },
+      "Open(uint256,address,bool,uint160,uint256)": {
+        "notice": "Emitted when a new order is opened"
+      },
+      "Settled(bool,uint256,address,uint256,uint256)": {
+        "notice": "Emitted when a position size is filled by a settler (=/= user)"
+      },
+      "SizeChanged(uint256,address,uint256)": {
+        "notice": "Emitted when a position size is adjusted by a user"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "closePositionOwner(uint256)": {
+        "notice": "Closes a limit order position, has to be triggered by the owner of the position"
+      },
+      "createOrder(bool,uint160,uint256)": {
+        "notice": "Opens a new limit order with ETH"
+      },
+      "decreaseSize(uint256,uint256)": {
+        "notice": "Decreases an existing order's size"
+      },
+      "getActivityStatus(uint256)": {
+        "notice": "Getter to fetch a given position's status"
+      },
+      "getOwner(uint256)": {
+        "notice": "Getter to fetch a given position's owner"
+      },
+      "getPoolPrice()": {
+        "notice": "Getter to fetch current pool price"
+      },
+      "getQuantity(uint256)": {
+        "notice": "Getter to fetch a given position's size"
+      },
+      "getSide(uint256)": {
+        "notice": "Getter to fetch a given position's side "
+      },
+      "getTickLower(uint256)": {
+        "notice": "Getter to fetch a given position's lower tick "
+      },
+      "getTickUpper(uint256)": {
+        "notice": "Getter to fetch a given position's upper tick "
+      },
+      "increaseSize(uint256,uint256)": {
+        "notice": "Increases an existing order's size with native ETH"
+      },
+      "poolToken0()": {
+        "notice": "The first of the two tokens of the underlying Uniswap V3 pool, sorted by address"
+      },
+      "poolToken1()": {
+        "notice": "The second of the two tokens of the underlying Uniswap V3 pool, sorted by address"
+      },
+      "returnPositionToUser(uint256)": {
+        "notice": "Returns the Uniswap NFT position to the position owner"
+      },
+      "settleOrder(uint256)": {
+        "notice": "Closes a limit order position, has to be triggered by the owner of the position"
+      }
+    },
+    "version": 1
+  }
+}
